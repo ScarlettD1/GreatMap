@@ -1,0 +1,36 @@
+div {
+  color: #adb5bd;
+}
+
+h1 {
+  color: #ced4da;
+  margin-left: 70px;
+}
+
+h2 {
+  font-size: 1.4em;
+  color: #adb5bd;
+  height: 50px;
+}
+
+body {
+  background-image: url("/images/wall.jpg");
+}
+body div .nav {
+  border: 2px solid #adb5bd;
+  background-color: #495057;
+}
+body div .nav .logo {
+  background-color: #ced4da;
+  font-size: 2.3em;
+}
+body .t {
+  background-color: #495057;
+}
+
+a{
+    text-decoration: none !important;
+    color: transparent !important;
+}
+
+/*# sourceMappingURL=style.css.map */
