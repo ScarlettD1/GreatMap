@@ -1,4 +1,4 @@
-@section('registration')
+@section('content')
 
 <!--Form-->
 <div class="container reg_form">

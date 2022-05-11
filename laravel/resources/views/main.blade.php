@@ -34,7 +34,7 @@
     </header>
 </div>
 
-
+@yield('content')
 
 <!--Footer-->
 <div class="footer-color container-fluid">

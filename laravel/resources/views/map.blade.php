@@ -1,4 +1,5 @@
-@section('map')
+@extends('main')
+@section('content')
 
 <!--Map-->
 <div class="main background-map container-fluid">
