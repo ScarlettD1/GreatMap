@@ -10,206 +10,34 @@
 <body>
 
 <!--Header-->
-<div class="header container">
-    <div class="row items-header">
-        <div class="col-3 row-item-header">
-            <a href="index.html" class="links-decoration">
-                <img src="pictures/img/logo.png" width="40" height="40">
-                <span class="logo-text">great meet</span>
-            </a>
-        </div>
-        <div class="col-2 row-item-header">
-            <a href="#" class="links-decoration">Встречи</a>
-        </div>
-        <div class="col-2 row-item-header">
-            <a href="#" class="links-decoration">Поддержка</a>
-        </div>
-        <div class="col-2 row-item-header">
-            <a href="#" class="links-decoration" onclick="showFilter()">Фильтр</a>
-        </div>
-        <div class="col-1 row-item-header-b1">
+<div class="header-color container-fluid">
+    <header class="d-flex flex-wrap align-items-center justify-content-center justify-content-md-between py-3 border-bottom">
+        <a href="index.html" class="links-decoration">
+            <img src="pictures/img/logo.png" width="40" height="40">
+            <span class="logo-text">great meet</span>
+        </a>
+
+        <ul class="nav col-12 col-md-auto mb-2 justify-content-center mb-md-0">
+            <li><a href="#" class="nav-link px-2 links-decoration">Встречи</a></li>
+            <li><a href="#" class="nav-link px-2 links-decoration">Поддержка</a></li>
+            <li><a href="#" class="nav-link px-2 links-decoration js-show-filter" onclick="showFilter()">Фильтр</a></li>
+        </ul>
+
+        <div class="col-md-3 text-end">
             <a href="entrance.html">
                 <button class="btn">Войти</button>
             </a>
-        </div>
-        <div class="col-2 row-item-header-b2">
             <a href="registration.html">
-                <button class="btn">Зарегестрироваться</button>
+                <button class="btn">Зарегистрироваться</button>
             </a>
         </div>
-    </div>
+    </header>
 </div>
 
-<!--Filter-->
-<div class="filter container imshow" id="filter">
-    <div class="row items-header justify-content-around">
-        <form style="display: inline-flex">
-            <div class="col-3 pad-filter">
-                <input type="text" class="form-control" placeholder="Категория">
-            </div>
-            <div class="col-3 pad-filter">
-                <input type="text" class="form-control" placeholder="Количество людей">
-            </div>
-            <div class="col-3 pad-filter">
-                <input type="text" class="form-control" placeholder="Время">
-            </div>
-            <div class="col-3 row-item-header-b1">
-                <button type="submit" class="btn" onclick="removeFilter()">Применить</button>
-            </div>
-        </form>
-    </div>
-</div>
 
-<!--Map-->
-<div class="main container">
-    <div id="map" class="main-map row"></div>
-</div>
-
-<!--Modal Form for hint-->
-<!--<button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal" data-bs-whatever="@getbootstrap">Open modal for @getbootstrap</button>-->
-
-<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-    <div class="modal-dialog">
-        <div class="modal-content">
-            <div class="modal-header">
-                <h5 class="modal-title" id="exampleModalLabel">Добавление события</h5>
-                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-            </div>
-            <div class="modal-body">
-                <form id="hint_form" name="hint_form" onsubmit="return checkHintForm(this)" method="post">
-                    <div class="mb-3 col-12 ">
-                        <label for="recipient-name" class="col-form-label">Категория встречи:</label>
-                        <p><select name="list1" id="recipient-name">
-                                <option>Спорт</option>
-                                <option>Настольные игры</option>
-                                <option>Прогулка</option>
-                                <option>Концерт</option>
-
-                            </select></p>
-
-                        <!--<input type="text" name="cause" class="form-control" id="recipient-name">-->
-                    </div>
-                    <div class="mb-3 col-12 ">
-                        <label for="recipient-count" class="col-form-label">Количество человек:</label>
-                        <input type="text" name="cause" class="form-control" id="recipient-count">
-                    </div>
-                    <div class="mb-3 col-12 ">
-                        <label for="recipient-date" class="col-form-label">Время:</label>
-                        <input type="time" name="cause" class="form-control" id="recipient-date">
-                    </div>
-                    <div class="mb-3 col-12 ">
-                        <label for="message-text" class="col-form-label">Описание:</label>
-                        <textarea class="form-control" name="description" id="message-text"></textarea>
-                    </div>
-                    <div class="mb-3 modal-footer">
-                        <button type="submit" onclick="closeModalHint()" class="btn">Добавить</button>
-                    </div>
-                </form>
-            </div>
-        </div>
-    </div>
-</div>
-
-<!--<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">-->
-<!--    <div class="modal-dialog">-->
-<!--        <div class="modal-content">-->
-<!--            <div class="modal-header">-->
-<!--                <h5 class="modal-title" id="exampleModalLabel">Добавление события</h5>-->
-<!--                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>-->
-<!--            </div>-->
-<!--            <div class="modal-body">-->
-<!--                <form id="hint_form" name="hint_form" onsubmit="return checkHintForm(this)" method="post">-->
-<!--                    <div class="mb-3 col-12 ">-->
-<!--                        <label for="recipient-name" class="col-form-label">Причина встречи:</label>-->
-<!--                        <input type="text" name="cause" class="form-control" id="recipient-name">-->
-<!--                    </div>-->
-<!--                    <div class="mb-3 col-12 ">-->
-<!--                        <label for="message-text" class="col-form-label">Описание:</label>-->
-<!--                        <textarea class="form-control" name="description" id="message-text"></textarea>-->
-<!--                    </div>-->
-<!--                    <div class="mb-3 modal-footer">-->
-<!--                        <button type="submit" class="btn">Добавить</button>-->
-<!--                    </div>-->
-<!--                </form>-->
-<!--            </div>-->
-<!--        </div>-->
-<!--    </div>-->
-<!--</div>-->
-
-<!--Block-->
-<div class="container">
-    <div class="row text-center">
-        <div class="col-12 upcoming-meetings">
-            <h1>Ближайшие встречи</h1>
-        </div>
-    </div>
-</div>
-
-<!--Upcoming meetings-->
-<div class="container padding">
-    <div class="row ">
-        <div class="col-md-4">
-            <div class="card">
-                <img src="pictures/img/football.jpg" class="card-img-top" alt="картирка не обнаружена" width="70" height="220">
-                <div class="card-body">
-                    <h5 class="hirizont-center">Играем в футбол</h5>
-                    <div class="meeting">
-                        <p class="meet-time">Время:</p>
-                        <p class="time"> 17:00</p>
-                    </div>
-                    <div class="short-description">
-                        <p class="short-text">Краткое описание:</p>
-                        <p class="text"></p>
-                    </div>
-                    <div class="hirizont-center">
-                        <a href="" class="btn hirizont-center">Присоедениться</a>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="col-md-4">
-            <div class="card">
-                <img src="pictures/img/Volley.jpg" class="card-img-top" alt="картирка не обнаружена" width="70" height="220">
-                <div class="card-body">
-                    <h5 class="hirizont-center">Воллейбольчик</h5>
-                    <div class="meeting">
-                        <p class="meet-time">Время:</p>
-                        <p class="time">18:30</p>
-                    </div>
-                    <div class="short-description">
-                        <p class="short-text">Краткое описание:</p>
-                        <p class="text"></p>
-                    </div>
-                    <div class="hirizont-center">
-                        <a href="" class="btn hirizont-center">Присоедениться</a>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="col-md-4">
-            <div class="card">
-                <img src="pictures/img/chess.jpeg" class="card-img-top" alt="картирка не обнаружена" width="70" height="220">
-                <div class="card-body">
-                    <h5 class="hirizont-center">Название</h5>
-                    <div class="meeting">
-                        <p class="meet-time">Время:</p>
-                        <p class="time">15:45</p>
-                    </div>
-                    <div class="short-description">
-                        <p class="short-text">Краткое описание:</p>
-                        <p class="text"></p>
-                    </div>
-                    <div class="hirizont-center">
-                        <a href="" class="btn hirizont-center">Присоедениться</a>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
 
 <!--Footer-->
-<div class="footer container">
+<div class="footer-color container-fluid">
     <div class="row footer-first items-header">
         <div class="col-4 row-item-footer-right">
             <p class="links-decoration">Поддержка</p>

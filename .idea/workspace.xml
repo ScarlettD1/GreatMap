@@ -2,29 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="e85ef50b-9cc5-4a6d-bc9d-5c2d63be68d7" name="Changes" comment="add example">
-      <change afterPath="$PROJECT_DIR$/laravel/app/Models/Meeting.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/laravel/resources/views/auth/confirm-password.blade.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/laravel/resources/views/auth/forgot-password.blade.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/laravel/resources/views/auth/login.blade.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/laravel/resources/views/auth/register.blade.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/laravel/resources/views/auth/reset-password.blade.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/laravel/resources/views/auth/verify-email.blade.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/laravel/resources/views/components/application-logo.blade.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/laravel/resources/views/components/auth-card.blade.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/laravel/resources/views/components/auth-session-status.blade.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/laravel/resources/views/components/auth-validation-errors.blade.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/laravel/resources/views/components/button.blade.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/laravel/resources/views/components/dropdown-link.blade.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/laravel/resources/views/components/dropdown.blade.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/laravel/resources/views/components/input.blade.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/laravel/resources/views/components/label.blade.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/laravel/resources/views/components/nav-link.blade.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/laravel/resources/views/components/responsive-nav-link.blade.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/laravel/resources/views/main.blade.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/laravel/resources/views/map.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/laravel/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/laravel/routes/web.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -117,7 +95,7 @@
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/laravel/app/Models" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="nodejs_package_manager_path" value="npm" />
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
@@ -150,6 +128,7 @@
       <workItem from="1652104806076" duration="1274000" />
       <workItem from="1652186563087" duration="92000" />
       <workItem from="1652206330682" duration="6137000" />
+      <workItem from="1652266833482" duration="927000" />
     </task>
     <task id="LOCAL-00001" summary="add example">
       <created>1652186591484</created>
