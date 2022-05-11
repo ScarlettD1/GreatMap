@@ -2,6 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="e85ef50b-9cc5-4a6d-bc9d-5c2d63be68d7" name="Changes" comment="add example">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/laravel/resources/css/app.css" beforeDir="false" afterPath="$PROJECT_DIR$/laravel/resources/css/app.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/laravel/resources/js/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/laravel/resources/js/app.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/laravel/resources/views/enterence.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/laravel/resources/views/enterence.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/laravel/resources/views/main.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/laravel/resources/views/main.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/laravel/resources/views/map.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/laravel/resources/views/map.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/laravel/resources/views/registration.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/laravel/resources/views/registration.blade.php" afterDir="false" />
@@ -107,6 +111,9 @@
       <recent name="D:\programming\GreatMap\laravel" />
       <recent name="D:\programming\GreatMap\laravel\resources\views" />
     </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/laravel/resources/views" />
+    </key>
   </component>
   <component name="RunManager">
     <configuration name="Artisan" type="PhpLocalRunConfigurationType" factoryName="PHP Console" path="$PROJECT_DIR$/laravel/artisan" scriptParameters="serve">
@@ -130,7 +137,7 @@
       <workItem from="1652104806076" duration="1274000" />
       <workItem from="1652186563087" duration="92000" />
       <workItem from="1652206330682" duration="6137000" />
-      <workItem from="1652266833482" duration="927000" />
+      <workItem from="1652266833482" duration="3868000" />
     </task>
     <task id="LOCAL-00001" summary="add example">
       <created>1652186591484</created>
@@ -167,6 +174,7 @@
         </entry>
       </map>
     </option>
+    <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="add example" />

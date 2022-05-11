@@ -1,5 +1,7 @@
 @extends('main')
+
 @section('content')
+
 
 <!--Map-->
 <div class="main background-map container-fluid">
@@ -21,7 +23,7 @@
     <div class="row ">
         <div class="col-md-4">
             <div class="card">
-                <img src="pictures/img/football.jpg" class="card-img-top" alt="картирка не обнаружена" width="70" height="220">
+                <img src="/laravel/resources/pictures/img/football.jpg" class="card-img-top" alt="картирка не обнаружена" width="70" height="220">
                 <div class="card-body">
                     <h5 class="hirizont-center">Играем в футбол</h5>
                     <div class="meeting">
@@ -40,7 +42,7 @@
         </div>
         <div class="col-md-4">
             <div class="card">
-                <img src="pictures/img/Volley.jpg" class="card-img-top" alt="картирка не обнаружена" width="70" height="220">
+                <img src="/laravel/resources/pictures/img/Volley.jpg" class="card-img-top" alt="картирка не обнаружена" width="70" height="220">
                 <div class="card-body">
                     <h5 class="hirizont-center">Воллейбольчик</h5>
                     <div class="meeting">
@@ -59,7 +61,7 @@
         </div>
         <div class="col-md-4">
             <div class="card">
-                <img src="pictures/img/chess.jpeg" class="card-img-top" alt="картирка не обнаружена" width="70" height="220">
+                <img src="/laravel/resources/pictures/img/chess.jpeg" class="card-img-top" alt="картирка не обнаружена" width="70" height="220">
                 <div class="card-body">
                     <h5 class="hirizont-center">Название</h5>
                     <div class="meeting">
