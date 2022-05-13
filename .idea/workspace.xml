@@ -2,21 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="e85ef50b-9cc5-4a6d-bc9d-5c2d63be68d7" name="Changes" comment="ignore">
-      <change afterPath="$PROJECT_DIR$/laravel/public/pictures/img/Sample_Logo.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/laravel/public/pictures/img/Volley.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/laravel/public/pictures/img/chess.jpeg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/laravel/public/pictures/img/football.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/laravel/public/pictures/img/logo.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/laravel/public/pictures/img/peopleRead1.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/laravel/public/pictures/img/pexels-photo-1269968.jpeg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/laravel/public/pictures/img/solid-gray-concrete-textured-wall.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/laravel/public/pictures/markers/Star_16.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/laravel/public/pictures/markers/Star_24.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/laravel/public/css/app.css" beforeDir="false" afterPath="$PROJECT_DIR$/laravel/public/css/app.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/laravel/public/js/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/laravel/public/js/app.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/laravel/resources/js/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/laravel/resources/js/app.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/laravel/resources/views/main.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/laravel/resources/views/main.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/laravel/resources/views/map.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/laravel/resources/views/map.blade.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/laravel/app/Models/Meet_tags.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/laravel/app/Models/Meeting.php" beforeDir="false" afterPath="$PROJECT_DIR$/laravel/app/Models/Meeting.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/laravel/database/migrations/2022_05_10_194532_create_meetings_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/laravel/database/migrations/2022_05_10_194532_create_meetings_table.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -107,18 +96,20 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "last_opened_file_path": "/home/scarlett/Univercity/GreatMap/laravel/public"
-  }
-}]]></component>
+  <component name="PropertiesComponent">
+    <property name="DatabaseDriversLRU" value="postgresql" />
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/laravel/app/Models" />
+    <property name="nodejs_package_manager_path" value="npm" />
+    <property name="vue.rearranger.settings.migration" value="true" />
+  </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$/laravel/public" />
-      <recent name="$PROJECT_DIR$/laravel/public/js" />
-      <recent name="$PROJECT_DIR$/laravel/public/css" />
       <recent name="D:\programming\GreatMap\laravel\app\Models" />
       <recent name="D:\programming\GreatMap\laravel" />
+      <recent name="D:\programming\GreatMap\laravel\resources\views" />
     </key>
   </component>
   <component name="RunManager">
@@ -195,6 +186,7 @@
         </entry>
       </map>
     </option>
+    <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="add example" />
