@@ -1,7 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="e85ef50b-9cc5-4a6d-bc9d-5c2d63be68d7" name="Changes" comment="i've done smth" />
+    <list default="true" id="e85ef50b-9cc5-4a6d-bc9d-5c2d63be68d7" name="Changes" comment="ignore">
+      <change afterPath="$PROJECT_DIR$/laravel/app/Models/Meet_tags.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/laravel/app/Models/Meeting.php" beforeDir="false" afterPath="$PROJECT_DIR$/laravel/app/Models/Meeting.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/laravel/database/migrations/2022_05_10_194532_create_meetings_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/laravel/database/migrations/2022_05_10_194532_create_meetings_table.php" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -9,7 +14,9 @@
   </component>
   <component name="ComposerSettings" doNotAsk="true" synchronizationState="SYNCHRONIZE">
     <pharConfigPath>$PROJECT_DIR$/composer.json</pharConfigPath>
-    <execution />
+    <execution>
+      <interpreter composer="composer" />
+    </execution>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -23,7 +30,7 @@
     </file-type-list>
   </component>
   <component name="GitToolBoxStore">
-    <option name="projectConfigVersion" value="3" />
+    <option name="projectConfigVersion" value="5" />
     <option name="recentBranches">
       <RecentBranches>
         <option name="branchesForRepo">
@@ -90,6 +97,7 @@
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent">
+    <property name="DatabaseDriversLRU" value="postgresql" />
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
@@ -126,6 +134,8 @@
       <workItem from="1652104806076" duration="1274000" />
       <workItem from="1652186563087" duration="92000" />
       <workItem from="1652206330682" duration="6429000" />
+      <workItem from="1652463212888" duration="204000" />
+      <workItem from="1652463529018" duration="9478000" />
     </task>
     <task id="LOCAL-00001" summary="add example">
       <created>1652186591484</created>
@@ -141,7 +151,14 @@
       <option name="project" value="LOCAL" />
       <updated>1652216255599</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="ignore">
+      <created>1652463409733</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1652463409733</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -174,6 +191,7 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="add example" />
     <MESSAGE value="i've done smth" />
-    <option name="LAST_COMMIT_MESSAGE" value="i've done smth" />
+    <MESSAGE value="ignore" />
+    <option name="LAST_COMMIT_MESSAGE" value="ignore" />
   </component>
 </project>

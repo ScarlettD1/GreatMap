@@ -2,13 +2,12 @@
 
 namespace App\Models;
 
-use Illuminate\Contracts\Auth\MustVerifyEmail;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
-use Illuminate\Foundation\Auth\User as Authenticatable;
+use Illuminate\Database\Eloquent\Model;
 use Illuminate\Notifications\Notifiable;
 use Laravel\Sanctum\HasApiTokens;
 
-class Meeting extends Authenticatable
+class tags extends Model
 {
     use HasApiTokens, HasFactory, Notifiable;
 
@@ -18,13 +17,7 @@ class Meeting extends Authenticatable
      * @var array<int, string>
      */
     protected $fillable = [
-        'name',
-        'status',
-        'meeting_time',
-        'show_time',
-        'description',
-        'tags',
-        'participants_need',
+        'tag',
     ];
 
     /**
@@ -41,15 +34,18 @@ class Meeting extends Authenticatable
      * @var array<string, string>
      */
     protected $casts = [
-        'participants_have' => 0,
     ];
 
-    public function tags()
+    public function meetings()
     {
-        return $this->belongsToMany(Tags::class,
+        return $this->belongsToMany(Meeting::class,
             'meet_tags',
-            'meet_id',
-            'tag_id');
+            'tag_id',
+            'meet_id');
 
     }
+    //return $this->belongsToMany(RelatedModel,
+    // pivot_table_name,
+    // foreign_key_of_current_model_in_pivot_table,
+    // foreign_key_of_other_model_in_pivot_table);
 }
