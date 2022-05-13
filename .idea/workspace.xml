@@ -1,15 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="e85ef50b-9cc5-4a6d-bc9d-5c2d63be68d7" name="Changes" comment="add example">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/laravel/resources/css/app.css" beforeDir="false" afterPath="$PROJECT_DIR$/laravel/resources/css/app.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/laravel/resources/js/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/laravel/resources/js/app.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/laravel/resources/views/enterence.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/laravel/resources/views/enterence.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/laravel/resources/views/main.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/laravel/resources/views/main.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/laravel/resources/views/map.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/laravel/resources/views/map.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/laravel/resources/views/registration.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/laravel/resources/views/registration.blade.php" afterDir="false" />
-    </list>
+    <list default="true" id="e85ef50b-9cc5-4a6d-bc9d-5c2d63be68d7" name="Changes" comment="i've done smth" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -101,7 +93,7 @@
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/laravel/app/Models" />
     <property name="nodejs_package_manager_path" value="npm" />
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
@@ -110,9 +102,6 @@
       <recent name="D:\programming\GreatMap\laravel\app\Models" />
       <recent name="D:\programming\GreatMap\laravel" />
       <recent name="D:\programming\GreatMap\laravel\resources\views" />
-    </key>
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$/laravel/resources/views" />
     </key>
   </component>
   <component name="RunManager">
@@ -136,8 +125,7 @@
       <workItem from="1651829743055" duration="1114000" />
       <workItem from="1652104806076" duration="1274000" />
       <workItem from="1652186563087" duration="92000" />
-      <workItem from="1652206330682" duration="6137000" />
-      <workItem from="1652266833482" duration="3868000" />
+      <workItem from="1652206330682" duration="6429000" />
     </task>
     <task id="LOCAL-00001" summary="add example">
       <created>1652186591484</created>
@@ -146,7 +134,14 @@
       <option name="project" value="LOCAL" />
       <updated>1652186591484</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="i've done smth">
+      <created>1652216255599</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1652216255599</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -178,6 +173,7 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="add example" />
-    <option name="LAST_COMMIT_MESSAGE" value="add example" />
+    <MESSAGE value="i've done smth" />
+    <option name="LAST_COMMIT_MESSAGE" value="i've done smth" />
   </component>
 </project>
