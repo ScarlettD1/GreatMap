@@ -13,7 +13,7 @@
 <div class="header-color container-fluid">
     <header class="d-flex flex-wrap align-items-center justify-content-center justify-content-md-between py-3 border-bottom">
         <a href="/laravel/resources/views/main.blade.php" class="links-decoration">
-            <img src="/laravel/resources/pictures/img/logo.png" width="40" height="40">
+            <img src="../pictures/img/logo.png" width="40" height="40">
             <span class="logo-text">great meet</span>
         </a>
 
@@ -44,7 +44,7 @@
         </div>
         <div class="col-4 row-item-header">
             <a href="#" class="links-decoration">
-                <img src="/laravel/resources/pictures/img/logo.png" width="40" height="40">
+                <img src="../pictures/img/logo.png" width="40" height="40">
                 <span class="logo-text">great meet</span>
             </a>
         </div>
@@ -90,7 +90,7 @@
 
 <!--yandexMap-->
 <script src="https://api-maps.yandex.ru/2.1/?lang=ru_RU&amp;apikey=5127ede8-ca9d-4c4b-8d84-92ad690c4b07"></script>
-<script src="/laravel/resources/js/app.js"></script>
+<script src="../js/app.js"></script>
 <!--boot5-->
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"

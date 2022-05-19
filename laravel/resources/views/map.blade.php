@@ -23,7 +23,7 @@
     <div class="row ">
         <div class="col-md-4">
             <div class="card">
-                <img src="/laravel/resources/pictures/img/football.jpg" class="card-img-top" alt="картирка не обнаружена" width="70" height="220">
+                <img src="../pictures/img/football.jpg" class="card-img-top" alt="картинка не обнаружена" width="70" height="220">
                 <div class="card-body">
                     <h5 class="hirizont-center">Играем в футбол</h5>
                     <div class="meeting">
@@ -42,7 +42,7 @@
         </div>
         <div class="col-md-4">
             <div class="card">
-                <img src="/laravel/resources/pictures/img/Volley.jpg" class="card-img-top" alt="картирка не обнаружена" width="70" height="220">
+                <img src="../pictures/img/Volley.jpg" class="card-img-top" alt="картинка не обнаружена" width="70" height="220">
                 <div class="card-body">
                     <h5 class="hirizont-center">Воллейбольчик</h5>
                     <div class="meeting">
@@ -54,14 +54,14 @@
                         <p class="text"></p>
                     </div>
                     <div class="hirizont-center">
-                        <a href="" class="btn hirizont-center">Присоедениться</a>
+                        <a href="" class="btn hirizont-center">Присоединиться</a>
                     </div>
                 </div>
             </div>
         </div>
         <div class="col-md-4">
             <div class="card">
-                <img src="/laravel/resources/pictures/img/chess.jpeg" class="card-img-top" alt="картирка не обнаружена" width="70" height="220">
+                <img src="../pictures/img/chess.jpeg" class="card-img-top" alt="картинка не обнаружена" width="70" height="220">
                 <div class="card-body">
                     <h5 class="hirizont-center">Название</h5>
                     <div class="meeting">
@@ -73,7 +73,7 @@
                         <p class="text"></p>
                     </div>
                     <div class="hirizont-center">
-                        <a href="" class="btn hirizont-center">Присоедениться</a>
+                        <a href="" class="btn hirizont-center">Присоединиться</a>
                     </div>
                 </div>
             </div>
