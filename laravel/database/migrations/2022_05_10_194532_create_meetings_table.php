@@ -20,8 +20,10 @@ class CreateMeetingsTable extends Migration
             $table->dateTime('meeting_time');
             $table->dateTime('show_time');
             $table->string('name');
-            $table->string('description');
-            $table->string('tags');
+            $table->string('description')->nullable();
+
+//            $table->foreign('tag_id')->references('id')->on('meet_tags');
+
             $table->smallinteger('participants_need');
             $table->smallinteger('participants_have');
         });

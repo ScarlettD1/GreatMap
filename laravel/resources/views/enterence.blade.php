@@ -1,4 +1,6 @@
-@section('enterence')
+@extends('main')
+
+@section('content')
 
 <!--Form-->
 <div class="container enter_form">

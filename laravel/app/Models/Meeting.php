@@ -43,4 +43,13 @@ class Meeting extends Authenticatable
     protected $casts = [
         'participants_have' => 0,
     ];
+
+    public function tags()
+    {
+        return $this->belongsToMany(Tags::class,
+            'meet_tags',
+            'meet_id',
+            'tag_id');
+
+    }
 }
