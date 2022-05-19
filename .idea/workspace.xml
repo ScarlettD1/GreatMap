@@ -2,9 +2,12 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="e85ef50b-9cc5-4a6d-bc9d-5c2d63be68d7" name="Changes" comment="add example">
+      <change afterPath="$PROJECT_DIR$/laravel/public/css/app.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/laravel/public/js/app.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/laravel/public/js/bootstrap.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/laravel/resources/views/main.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/laravel/resources/views/main.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/laravel/resources/views/map.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/laravel/resources/views/map.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/laravel/resources/views/registration.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/laravel/resources/views/registration.blade.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -27,7 +30,7 @@
     </file-type-list>
   </component>
   <component name="GitToolBoxStore">
-    <option name="projectConfigVersion" value="3" />
+    <option name="projectConfigVersion" value="5" />
     <option name="recentBranches">
       <RecentBranches>
         <option name="branchesForRepo">
@@ -93,14 +96,13 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">
-    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
-    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
-    <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
-    <property name="nodejs_package_manager_path" value="npm" />
-    <property name="vue.rearranger.settings.migration" value="true" />
-  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "WebServerToolWindowFactoryState": "false",
+    "last_opened_file_path": "/home/scarlett/Univercity/GreatMap/laravel/public",
+    "vue.rearranger.settings.migration": "true"
+  }
+}]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="D:\programming\GreatMap\laravel\app\Models" />
@@ -131,6 +133,8 @@
       <workItem from="1652186563087" duration="92000" />
       <workItem from="1652206330682" duration="6137000" />
       <workItem from="1652266833482" duration="927000" />
+      <workItem from="1652871514873" duration="4000" />
+      <workItem from="1652952029006" duration="374000" />
     </task>
     <task id="LOCAL-00001" summary="add example">
       <created>1652186591484</created>
