@@ -2,21 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="e85ef50b-9cc5-4a6d-bc9d-5c2d63be68d7" name="Changes" comment="ignore">
-      <change afterPath="$PROJECT_DIR$/laravel/public/pictures/img/Sample_Logo.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/laravel/public/pictures/img/Volley.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/laravel/public/pictures/img/chess.jpeg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/laravel/public/pictures/img/football.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/laravel/public/pictures/img/logo.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/laravel/public/pictures/img/peopleRead1.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/laravel/public/pictures/img/pexels-photo-1269968.jpeg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/laravel/public/pictures/img/solid-gray-concrete-textured-wall.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/laravel/public/pictures/markers/Star_16.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/laravel/public/pictures/markers/Star_24.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/laravel/public/css/app.css" beforeDir="false" afterPath="$PROJECT_DIR$/laravel/public/css/app.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/laravel/public/js/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/laravel/public/js/app.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/laravel/resources/js/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/laravel/resources/js/app.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/laravel/resources/views/main.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/laravel/resources/views/main.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/laravel/resources/views/map.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/laravel/resources/views/map.blade.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/laravel/app/Http/Controllers/mapController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/laravel/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/laravel/routes/web.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -30,7 +17,13 @@
     </execution>
   </component>
   <component name="Git.Settings">
+    <option name="RECENT_BRANCH_BY_REPOSITORY">
+      <map>
+        <entry key="$PROJECT_DIR$" value="js-css-connect" />
+      </map>
+    </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+    <option name="ROOT_SYNC" value="DONT_SYNC" />
   </component>
   <component name="GitSEFilterConfiguration">
     <file-type-list>
@@ -50,16 +43,43 @@
               <option name="branches">
                 <list>
                   <RecentBranch>
-                    <option name="branchName" value="main" />
-                    <option name="lastUsedInstant" value="1652105273" />
+                    <option name="branchName" value="modal-form-create" />
+                    <option name="lastUsedInstant" value="1652986834" />
                   </RecentBranch>
                   <RecentBranch>
-                    <option name="branchName" value="master" />
-                    <option name="lastUsedInstant" value="1652105272" />
+                    <option name="branchName" value="main" />
+                    <option name="lastUsedInstant" value="1652105273" />
                   </RecentBranch>
                 </list>
               </option>
               <option name="repositoryRootUrl" value="file://$PROJECT_DIR$/ProjectManagement" />
+            </RecentBranchesForRepo>
+            <RecentBranchesForRepo>
+              <option name="branches">
+                <list>
+                  <RecentBranch>
+                    <option name="branchName" value="controller-for-map" />
+                    <option name="lastUsedInstant" value="1652986969" />
+                  </RecentBranch>
+                  <RecentBranch>
+                    <option name="branchName" value="js-css-connect" />
+                    <option name="lastUsedInstant" value="1652986905" />
+                  </RecentBranch>
+                  <RecentBranch>
+                    <option name="branchName" value="database-establish" />
+                    <option name="lastUsedInstant" value="1652986874" />
+                  </RecentBranch>
+                  <RecentBranch>
+                    <option name="branchName" value="modal-form-view" />
+                    <option name="lastUsedInstant" value="1652986843" />
+                  </RecentBranch>
+                  <RecentBranch>
+                    <option name="branchName" value="modal-form-create" />
+                    <option name="lastUsedInstant" value="1652986835" />
+                  </RecentBranch>
+                </list>
+              </option>
+              <option name="repositoryRootUrl" value="file://$PROJECT_DIR$" />
             </RecentBranchesForRepo>
           </list>
         </option>
@@ -107,11 +127,6 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "last_opened_file_path": "/home/scarlett/Univercity/GreatMap/laravel/public"
-  }
-}]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/laravel/public" />
@@ -190,11 +205,17 @@
                   </entry>
                 </map>
               </option>
+              <option name="COLUMN_ID_WIDTH">
+                <map>
+                  <entry key="Table.Default.Author.ColumnIdWidth" value="72" />
+                </map>
+              </option>
             </State>
           </value>
         </entry>
       </map>
     </option>
+    <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="add example" />
