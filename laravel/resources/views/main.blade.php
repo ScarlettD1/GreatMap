@@ -12,22 +12,20 @@
 <!--Header-->
 <div class="header-color container-fluid">
     <header class="d-flex flex-wrap align-items-center justify-content-center justify-content-md-between py-3 border-bottom">
-        <a href="/laravel/resources/views/main.blade.php" class="links-decoration">
-            <img src="../pictures/img/logo.png" width="40" height="40">
-            <span class="logo-text">great meet</span>
+        <a href="index.html" class="links-decoration">
+            <img src="pictures/img/logo.png" width="40" height="40">
+            <span class="logo-text">Great Meet</span>
         </a>
-
         <ul class="nav col-12 col-md-auto mb-2 justify-content-center mb-md-0">
             <li><a href="#" class="nav-link px-2 links-decoration">Встречи</a></li>
-            <li><a href="#" class="nav-link px-2 links-decoration">Поддержка</a></li>
-            <li><a href="#" class="nav-link px-2 links-decoration js-show-filter" onclick="showFilter()">Фильтр</a></li>
+            <li><a href="support.html" class="nav-link px-2 links-decoration">Поддержка</a></li>
+            <li><a href="#" class="nav-link px-2 links-decoration">ТЕКУЩЕЕ ВРЕМЯ: <span class="hours">15</span>:<span class="minutes">30</span></a></li>
         </ul>
-
         <div class="col-md-3 text-end">
-            <a href="/laravel/resources/views/enterence.blade.php">
+            <a href="entrance.html" class="tst">
                 <button class="btn">Войти</button>
             </a>
-            <a href="/laravel/resources/views/registration.blade.php">
+            <a href="registration.html" class="tst">
                 <button class="btn">Зарегистрироваться</button>
             </a>
         </div>
@@ -44,7 +42,7 @@
         </div>
         <div class="col-4 row-item-header">
             <a href="#" class="links-decoration">
-                <img src="../pictures/img/logo.png" width="40" height="40">
+                <img src="pictures/img/logo.png" width="40" height="40">
                 <span class="logo-text">great meet</span>
             </a>
         </div>
@@ -86,7 +84,6 @@
     </div>
 
 </div>
-
 
 <!--yandexMap-->
 <script src="https://api-maps.yandex.ru/2.1/?lang=ru_RU&amp;apikey=5127ede8-ca9d-4c4b-8d84-92ad690c4b07"></script>

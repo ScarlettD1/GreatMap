@@ -3,7 +3,7 @@
 
 @section('content')
 
-<!--Form-->
+<!--Reg Form-->
 <div class="container reg_form">
     <form class="row justify-content-md-center" method="post" action="#">
         <h2>Регистрация</h2>

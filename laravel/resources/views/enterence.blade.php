@@ -2,7 +2,7 @@
 
 @section('content')
 
-<!--Form-->
+<!--Entr Form-->
 <div class="container enter_form">
     <form class="row justify-content-md-center" method="post" action="#">
         <h2>Вход</h2>
