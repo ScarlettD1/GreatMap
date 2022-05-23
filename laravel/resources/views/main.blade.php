@@ -12,20 +12,20 @@
 <!--Header-->
 <div class="header-color container-fluid">
     <header class="d-flex flex-wrap align-items-center justify-content-center justify-content-md-between py-3 border-bottom">
-        <a href="index.html" class="links-decoration">
-            <img src="pictures/img/logo.png" width="40" height="40">
+        <a href="/map/" class="links-decoration">
+            <img src="../pictures/img/logo.png" width="40" height="40">
             <span class="logo-text">Great Meet</span>
         </a>
         <ul class="nav col-12 col-md-auto mb-2 justify-content-center mb-md-0">
-            <li><a href="#" class="nav-link px-2 links-decoration">Встречи</a></li>
-            <li><a href="support.html" class="nav-link px-2 links-decoration">Поддержка</a></li>
-            <li><a href="#" class="nav-link px-2 links-decoration">ТЕКУЩЕЕ ВРЕМЯ: <span class="hours">15</span>:<span class="minutes">30</span></a></li>
+            <li><a href="/map/" class="nav-link px-2 links-decoration">Встречи</a></li>
+            <li><a href="/support/" class="nav-link px-2 links-decoration">Поддержка</a></li>
+            <li><span class="nav-link px-2 links-decoration">ТЕКУЩЕЕ ВРЕМЯ: <span class="hours">15</span>:<span class="minutes">30</span></span></li>
         </ul>
         <div class="col-md-3 text-end">
-            <a href="entrance.html" class="tst">
+            <a href="/entrance/" class="tst">
                 <button class="btn">Войти</button>
             </a>
-            <a href="registration.html" class="tst">
+            <a href="/registration/" class="tst">
                 <button class="btn">Зарегистрироваться</button>
             </a>
         </div>
@@ -41,8 +41,8 @@
             <p class="links-decoration">Поддержка</p>
         </div>
         <div class="col-4 row-item-header">
-            <a href="#" class="links-decoration">
-                <img src="pictures/img/logo.png" width="40" height="40">
+            <a href="/map/" class="links-decoration">
+                <img src="../pictures/img/logo.png" width="40" height="40">
                 <span class="logo-text">great meet</span>
             </a>
         </div>

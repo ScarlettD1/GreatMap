@@ -19,3 +19,12 @@ Route::get('/', function () {
 Route::get('/map/', function () {
     return view('map');
 });
+Route::get('/support/', function () {
+    return view('support');
+});
+Route::get('/entrance/', function () {
+    return view('entrance');
+});
+Route::get('/registration/', function () {
+    return view('registration');
+});
