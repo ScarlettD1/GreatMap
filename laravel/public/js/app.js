@@ -206,15 +206,26 @@ function init() {
 let date = new Date();
 
 ymaps.ready(init);
+var thisDate = date.getDate();
+if (thisDate < 10) {
+    thisDate++;
+    thisDate = "0" + thisDate;
+}
+
 var thisMonth = date.getMonth();
 if (thisMonth < 10) {
     thisMonth++;
     thisMonth = "0" + thisMonth;
 }
-
 document.getElementById('time_hour').innerHTML = date.getHours();
 document.getElementById('time_minutes').innerHTML = date.getMinutes();
 document.getElementById('time_date').innerHTML
-    = date.getDate() + "." + thisMonth + "." + date.getFullYear() + " ";
+    = thisDate + "." + thisMonth + "." + date.getFullYear() + " ";
+setInterval(function () {
+    document.getElementById('time_hour').innerHTML = date.getHours();
+    document.getElementById('time_minutes').innerHTML = date.getMinutes();
+    document.getElementById('time_date').innerHTML
+        = thisDate + "." + thisMonth + "." + date.getFullYear() + " ";
+}, 1000);
 
 
