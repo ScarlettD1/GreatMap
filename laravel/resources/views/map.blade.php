@@ -103,7 +103,7 @@
                     </div>
                     <div class="mb-3 col-12 selectedMarkerform">
                         <label id="shirotaForTheLabel" class="shirotaForTheLabel titltLabel">Местоположение:</label>
-                        <label id="shirotaForTheSelectedLabel">dolgota</label>
+                        <label id="shirotaForTheSelectedLabel"> </label>
                     </div>
                     <div class="mb-3 col-12 selectedMarkerform">
                         <label id="descriptionForTheLabel" class="descriptionForTheLabel titltLabel">Описание:</label>
