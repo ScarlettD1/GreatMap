@@ -1,5 +1,7 @@
 <?php
 
+use App\Http\Controllers\MapController;
+use App\Http\Controllers\MeetingController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -19,6 +21,8 @@ Route::get('/', function () {
 Route::get('/map/', function () {
     return view('map');
 });
+Route::get('/map/', [MapController::class, 'index']);
+
 Route::get('/support/', function () {
     return view('support');
 });
@@ -28,6 +32,7 @@ Route::get('/entrance/', function () {
 Route::get('/registration/', function () {
     return view('registration');
 });
-Route::get('/meetings_pins/', 'App\Http\Controllers\meetingController@show');
+Route::get('/meetings_pins/', [MeetingController::class, 'show_all']);
+Route::post('/create', [MeetingController::class, 'create'])->name('create');
 
 

@@ -16,20 +16,20 @@
                     <button type="button" class="btn-close" data-bs-dismiss="modal" onclick="closeModalHintAlways()" aria-label="Close"></button>
                 </div>
                 <div class="modal-body">
-                    <form id="hint_form" name="hint_form" onsubmit="return checkHintForm(this)" method="post">
+                    <form id="hint_form" action="{{ route('create') }}" onsubmit="return checkHintForm(this)" method="post">
+                        @csrf
                         <div class="mb-3 col-12 ">
                             <label for="title" class="col-form-label">Название:</label>
-                            <input type="text" class="form-control" name="title-event" id="title"></input>
+                            <input type="text" class="form-control" name="title_event" id="title">
                         </div>
                         <div class="mb-3 col-12 ">
                             <label for="recipient-name" class="col-form-label">Категория встречи:</label>
                             <p><select name="list1" id="recipient-name">
-                                    <option>Спорт</option>
-                                    <option>Настольные игры</option>
-                                    <option>Прогулка</option>
-                                    <option>Концерт</option>
-
-                                </select></p>
+                                    @foreach($tags as $tag)
+                                    <option value={{ $tag->id }}>{{ $tag->name }}</option>
+                                    @endforeach
+                                </select>
+                            </p>
 
                             <!--<input type="text" name="cause" class="form-control" id="recipient-name">-->
                         </div>
@@ -39,21 +39,22 @@
                         <div class="mb-3 col-12 ">
                             <label id="shirota" class="col-form-label">Местоположение:</label>
                             <label id="shirotaStreet">dolgota</label>
+                            <input id="coord" name="coord" type="hidden">
                         </div>
                         <div class="mb-3 col-12 ">
                             <label for="recipient-count" class="col-form-label">Количество человек:</label>
                             <input type="number" name="countPeople" class="form-control" id="recipient-count">
                         </div>
                         <div class="mb-3 col-12 ">
-                            <label for="recipient-date" class="col-form-label">Время:</label>
-                            <input type="time" name="date" class="form-control" id="recipient-date">
+                            <label for="recipient-date" class="col-form-label">Время сбора:</label>
+                            <input type="date" name="meeting_time" class="form-control" id="recipient-date">
                         </div>
                         <div class="mb-3 col-12 ">
                             <label for="message-text" class="col-form-label">Описание:</label>
                             <textarea class="form-control" name="description" id="message-text"></textarea>
                         </div>
                         <div class="mb-3 modal-footer">
-                            <button type="submit"  class="btn">Добавить</button>
+                            <button type="submit" class="btn">Добавить</button>
                         </div>
                     </form>
                 </div>

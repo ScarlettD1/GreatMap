@@ -16,8 +16,7 @@ class CreatTagsTable extends Migration
         Schema::create('tags', function (Blueprint $table) {
             $table->id();
             $table->timestamps();
-            $table->string('tag');
-//            $table->foreign('meeting_id')->references('id')->on('meet_tags');
+            $table->string('name');
 
         });
     }

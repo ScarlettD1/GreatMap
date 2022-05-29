@@ -38,6 +38,7 @@ function createPlace() {
         if (flag) {
             e.preventDefault();
             var coords = e.get('coords');
+            document.getElementById('coord').value = coords;
             // shirota.innerText = getAddress(coords);
             // dolgota.innerText = coords[1];
             getAddress(coords);
@@ -53,7 +54,6 @@ function createPlace() {
 
             cause = '';
             description = '';
-
             var placemark = new ymaps.Placemark([coords[0], coords[1]], {
                     // balloonContent: getAddress(coords),
                     hintContent: cause
@@ -71,7 +71,7 @@ function createPlace() {
                     // Получим ссылку на геообъект, по которому кликнул пользователь.
                     var targetCoords = e.get('target').geometry.getCoordinates();
                     getAddressLabel(targetCoords);
-
+                    document.getElementById('coord').value = targetCoords;
 
                     activePlacemark = e.get('target');
                     if (flagOnActive) {
@@ -136,11 +136,32 @@ function getAddressLabel(target) {
 function checkHintForm() {
     event.preventDefault();
     var form = document.forms.hint_form;
-
     // var cause_form = form.elements.cause.value;
     // var description_form = form.elements.description.value;
-    cause = form.elements.list1.value;
-    description = form.elements.countPeople.value;
+    tag = form.elements.list1.value;
+    countPeople = form.elements.countPeople.value;
+    description = form.elements.description.value;
+    coord = form.elements.coord.value;
+    meeting_time = form.elements.meeting_time.value;
+    title = form.elements.title_event.value;
+    token = form.elements._token.value;
+    data = {
+        "title_event": title,
+        "meeting_time": meeting_time,
+        "description": description,
+        "list1": tag,
+        "countPeople": countPeople,
+        "coord": coord
+    };
+    console.log(JSON.stringify(data));
+    fetch('/create', {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json',
+            'X-CSRF-TOKEN': token
+        },
+        body: JSON.stringify(data)
+    });
 
     closeModalHintAlways();
 

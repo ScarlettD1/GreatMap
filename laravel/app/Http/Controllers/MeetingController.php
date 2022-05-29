@@ -11,7 +11,7 @@ use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Gate;
 
 
-class meetingController extends Controller
+class MeetingController extends Controller
 {
 
     /**
@@ -21,7 +21,7 @@ class meetingController extends Controller
      */
     public function index(User $user = null)
     {
-        return view('map', compact(['meetings', 'user']));
+        return view('map', compact(['user']));
     }
 
     /**
@@ -31,9 +31,10 @@ class meetingController extends Controller
      */
     public function show_all(User $user = null)
     {
-        $meetings = Film::withTrashed()->get();
-        $pins = [];
-        echo json_encode($pins);
+        $meetings = Meeting::all();
+        dd($meetings);
+//        $pins = [];
+//        echo json_encode($pins);
     }
 
     /**
@@ -41,13 +42,17 @@ class meetingController extends Controller
      *
      *
      */
-//    public function create()
-//    {
-//        if (!Auth::check()) {
-//            abort(401, "Authentication required");
-//        }
-//        return view('create');
-//    }
+    public function create(Request $request)
+    {
+        $meeting = new Meeting();
+        $meeting->name = $request->input('title_event');
+        $meeting->meeting_time = $request->input('meeting_time');
+        $meeting->description = $request->input('description');
+        $meeting->tag_id = $request->input('list1');
+        $meeting->participants_need = $request->input('countPeople');
+        $meeting->coordinates = $request->input('coord');
+        $meeting->save();
+    }
 
     /**
      * Store a newly created resource in storage.

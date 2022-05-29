@@ -16,16 +16,15 @@ class CreateMeetingsTable extends Migration
         Schema::create('meetings', function (Blueprint $table) {
             $table->id();
             $table->timestamps();
-            $table->integer('status');
             $table->dateTime('meeting_time');
-            $table->dateTime('show_time');
             $table->string('name');
             $table->string('description')->nullable();
-
-//            $table->foreign('tag_id')->references('id')->on('meet_tags');
+            $table->string('coordinates')->nullable();
 
             $table->smallinteger('participants_need');
-            $table->smallinteger('participants_have');
+            $table->smallinteger('participants_have')->nullable();
+            $table->integer('tag_id');
+            $table->foreign('tag_id')->references('id')->on('tags');
         });
     }
 

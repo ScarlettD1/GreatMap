@@ -11,7 +11,6 @@ use Laravel\Sanctum\HasApiTokens;
 class Meeting extends Authenticatable
 {
     use HasApiTokens, HasFactory, Notifiable;
-
     /**
      * The attributes that are mass assignable.
      *
@@ -19,12 +18,12 @@ class Meeting extends Authenticatable
      */
     protected $fillable = [
         'name',
-        'status',
         'meeting_time',
-        'show_time',
         'description',
         'tags',
         'participants_need',
+        'participants_have',
+        'coordinates'
     ];
 
     /**
