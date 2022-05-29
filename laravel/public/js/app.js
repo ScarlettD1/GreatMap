@@ -54,6 +54,7 @@ function createPlace(){
             cause = '';
             description = '';
             placemarks.forEach(function (obj) {
+                /////// TODO исправить эту хуету ( все метки повторяются при появлении новой
                 var placemark = new ymaps.Placemark([obj.latitude, obj.longitude], {
                         // balloonContent: getAddress(coords),
                         hintContent: obj.hintContent
