@@ -203,5 +203,18 @@ function init() {
     // map.behaviors.disable(['scrollZoom']); // отключаем скролл карты (опционально)
 }
 
+let date = new Date();
 
 ymaps.ready(init);
+var thisMonth = date.getMonth();
+if (thisMonth < 10) {
+    thisMonth++;
+    thisMonth = "0" + thisMonth;
+}
+
+document.getElementById('time_hour').innerHTML = date.getHours();
+document.getElementById('time_minutes').innerHTML = date.getMinutes();
+document.getElementById('time_date').innerHTML
+    = date.getDate() + "." + thisMonth + "." + date.getFullYear() + " ";
+
+
