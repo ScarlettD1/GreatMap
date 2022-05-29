@@ -19,32 +19,32 @@ var flag = false;
 var cause = '';
 var description = '';
 
-function showFilter(){
+function showFilter() {
     filter.classList.remove('imshow')
 }
 
-function removeFilter(){
+function removeFilter() {
     filter.classList.add('imshow')
 
 }
 
-function createPlace(){
+function createPlace() {
     event.preventDefault();
     flag = true;
     // console.log('sss');
-    if(flag){
-        modal.classList.remove('show');
-        map.events.add('click', function (e) {
+
+    modal.classList.remove('show');
+    map.events.add('click', function ggwp(e) {
+        if (flag) {
             e.preventDefault();
             var coords = e.get('coords');
-            // console.log('click');
             // shirota.innerText = getAddress(coords);
             // dolgota.innerText = coords[1];
             getAddress(coords);
 
             modal.classList.add('show');
 
-            placemarks.push(
+            const iPlacemarkId = placemarks.push(
                 {
                     latitude: coords[0],
                     longitude: coords[1],
@@ -53,64 +53,54 @@ function createPlace(){
 
             cause = '';
             description = '';
-            placemarks.forEach(function (obj) {
-                /////// TODO исправить эту хуету ( все метки повторяются при появлении новой
-                var placemark = new ymaps.Placemark([obj.latitude, obj.longitude], {
-                        // balloonContent: getAddress(coords),
-                        hintContent: obj.hintContent
-                    }
-                    , {
-                        iconLayout: 'default#image',
-                        iconImageHref: '../pictures/markers/blue-icon.png',
-                        iconImageSize: [30, 30],
-                        iconImageOffset: [-20, -20]
-                    });
-                map.geoObjects.add(placemark);
-                // Подпишемся на событие клика по коллекции.
-                placemark.events
-                    .add('click', function (e) {
-                        // Получим ссылку на геообъект, по которому кликнул пользователь.
-                        var targetCoords = e.get('target').geometry.getCoordinates();
-                        getAddressLabel(targetCoords);
+
+            var placemark = new ymaps.Placemark([coords[0], coords[1]], {
+                    // balloonContent: getAddress(coords),
+                    hintContent: cause
+                }
+                , {
+                    iconLayout: 'default#image',
+                    iconImageHref: '../pictures/markers/blue-icon.png',
+                    iconImageSize: [30, 30],
+                    iconImageOffset: [-20, -20]
+                });
+            map.geoObjects.add(placemark);
+            // Подпишемся на событие клика по коллекции.
+            placemark.events
+                .add('click', function (e) {
+                    // Получим ссылку на геообъект, по которому кликнул пользователь.
+                    var targetCoords = e.get('target').geometry.getCoordinates();
+                    getAddressLabel(targetCoords);
 
 
+                    activePlacemark = e.get('target');
+                    if (flagOnActive) {
+                        activePlacemark.options.set('iconImageHref', '../pictures/markers/gold_icon24.png');
 
-
-                        activePlacemark = e.get('target');
-                        if (flagOnActive){
-                            activePlacemark.options.set('iconImageHref', '../pictures/markers/gold_icon24.png');
-
-                            flagOnActive = false;
-                            if(countActive !== 0)
-                                newPlacemark.options.set('iconImageHref', '../pictures/markers/blue-icon.png');
-                            newPlacemark = activePlacemark;
-                            countActive++;
-
-                        }
-                        else{
+                        flagOnActive = false;
+                        if (countActive !== 0)
                             newPlacemark.options.set('iconImageHref', '../pictures/markers/blue-icon.png');
-                            activePlacemark.options.set('iconImageHref', '../pictures/markers/gold_icon24.png');
-                            newPlacemark = activePlacemark;
-                            flagOnActive = true;
-                        }
-                        // activePlacemark = e.get('target');
-                        // activePlacemark.options.set('iconImageHref', 'pictures/markers/blue-icon.png');
+                        newPlacemark = activePlacemark;
+                        countActive++;
 
-                        // e.get('target').options.change()
-                        // console.log(target.geometry.getCoordinates());
+                    } else {
+                        newPlacemark.options.set('iconImageHref', '../pictures/markers/blue-icon.png');
+                        activePlacemark.options.set('iconImageHref', '../pictures/markers/gold_icon24.png');
+                        newPlacemark = activePlacemark;
+                        flagOnActive = true;
+                    }
+                    // activePlacemark = e.get('target');
+                    // activePlacemark.options.set('iconImageHref', 'pictures/markers/blue-icon.png');
+
+                    // e.get('target').options.change()
 
 
-                        selectedlabel.classList.remove('imshow');
-                        // console.log("Нажата");
-                    });
-            });
-            // console.log(placemarks);
-        });
+                    selectedlabel.classList.remove('imshow');
+                });
+        }
         flag = false;
-        // console.log('fff');
-    } else {
-        alert('f');
-    }
+    });
+
     return true;
 }
 
@@ -125,7 +115,6 @@ function getAddress(coords) {
         ].filter(Boolean).join(', ')
         shirota.innerText = firstGeoObject.getAddressLine();
         // return firstGeoObject.getAddressLine();
-        // console.log(firstGeoObject.getAddressLine())
     });
 }
 
@@ -140,7 +129,6 @@ function getAddressLabel(target) {
         ].filter(Boolean).join(', ')
         shirotaForLabel.innerText = secondGeoObject.getAddressLine();
         // return firstGeoObject.getAddressLine();
-        // console.log(firstGeoObject.getAddressLine())
     });
 }
 
@@ -159,17 +147,16 @@ function checkHintForm() {
     return false;
 }
 
-function closeModalHintAlways(){
+function closeModalHintAlways() {
     modal.classList.add('imshow');
     flag = false;
-    // console.log(flag);
 }
 
-function closeSelectedLabelAlways(){
+function closeSelectedLabelAlways() {
     selectedlabel.classList.add('imshow');
 }
 
-function showModalHint(){
+function showModalHint() {
     modal.classList.remove('imshow');
     flag = false;
 }
@@ -215,7 +202,6 @@ function init() {
     map.controls.remove('rulerControl'); // удаляем контрол правил
     // map.behaviors.disable(['scrollZoom']); // отключаем скролл карты (опционально)
 }
-
 
 
 ymaps.ready(init);
