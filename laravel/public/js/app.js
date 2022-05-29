@@ -249,29 +249,4 @@ document.getElementById('time_hour').innerHTML = thisHour;
 document.getElementById('time_minutes').innerHTML = thisMinutes;
 document.getElementById('time_date').innerHTML
     = thisDate + "." + thisMonth + "." + date.getFullYear() + " ";
-setInterval(function () {
-    thisDate = date.getDate();
-    if (thisDate < 10) {
-        thisDate++;
-        thisDate = "0" + thisDate;
-    }
-    thisMonth = date.getMonth();
-    if (thisMonth < 10) {
-        thisMonth++;
-        thisMonth = "0" + thisMonth;
-    }
-    thisHour = date.getHours();
-    if (thisHour < 10) {
-        thisHour = "0" + thisHour;
-    }
-    thisMinutes = date.getMinutes();
-    if (thisMinutes < 10) {
-        thisMinutes = "0" + thisMinutes;
-    }
-    document.getElementById('time_hour').innerHTML = thisHour;
-    document.getElementById('time_minutes').innerHTML = thisMinutes;
-    document.getElementById('time_date').innerHTML
-        = thisDate + "." + thisMonth + "." + date.getFullYear() + " ";
-}, 1000);
-
 
