@@ -27,6 +27,42 @@ function removeFilter() {
     filter.classList.add('imshow')
 
 }
+// Отображение точек с таблицы meetings
+function showPlaces(places) {
+    places.forEach(element => {
+        var placemark = new ymaps.Placemark(element.coordinates.split(','), {
+                hintContent: cause
+            }
+            , {
+                iconLayout: 'default#image',
+                iconImageHref: '../pictures/markers/blue-icon.png',
+                iconImageSize: [30, 30],
+                iconImageOffset: [-20, -20]
+            });
+        map.geoObjects.add(placemark);
+    })
+}
+
+
+function getPlaces() {
+    var form = document.forms.hint_form;
+    // var cause_form = form.elements.cause.value;
+    // var description_form = form.elements.description.value;
+    token = form.elements._token.value;
+    fetch('/meetings_pins', {
+        method: 'GET',
+        headers: {
+            'Content-Type': 'application/json',
+            'X-CSRF-TOKEN': token
+        },
+    }).then(r => {
+       r.json().then(showPlaces)
+    });
+}
+
+document.addEventListener("DOMContentLoaded", function() {
+    getPlaces()
+});
 
 function createPlace() {
     event.preventDefault();
@@ -145,13 +181,15 @@ function checkHintForm() {
     meeting_time = form.elements.meeting_time.value;
     title = form.elements.title_event.value;
     token = form.elements._token.value;
+    haveCount = form.elements.have_count_people.value;
     data = {
         "title_event": title,
         "meeting_time": meeting_time,
         "description": description,
         "list1": tag,
         "countPeople": countPeople,
-        "coord": coord
+        "coord": coord,
+        "have_count_people": haveCount
     };
     console.log(JSON.stringify(data));
     fetch('/create', {
@@ -190,7 +228,12 @@ function init() {
     }, {
         searchControlProvider: 'yandex#search'
     });
-
+    var myPlacemark = new ymaps.Placemark([55.76, 37.64], {
+        // Хинт показывается при наведении мышкой на иконку метки.
+        hintContent: 'Содержимое всплывающей подсказки',
+        // Балун откроется при клике по метке.
+        balloonContent: 'Содержимое балуна'
+    });
     geolocation.get({
         provider: 'yandex',
         mapStateAutoApply: true

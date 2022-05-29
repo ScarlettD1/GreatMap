@@ -32,7 +32,7 @@ Route::get('/entrance/', function () {
 Route::get('/registration/', function () {
     return view('registration');
 });
-Route::get('/meetings_pins/', [MeetingController::class, 'show_all']);
+Route::get('/meetings_pins', [MeetingController::class, 'show_all']);
 Route::post('/create', [MeetingController::class, 'create'])->name('create');
 
 

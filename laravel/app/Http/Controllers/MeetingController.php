@@ -29,12 +29,11 @@ class MeetingController extends Controller
      *
      *
      */
-    public function show_all(User $user = null)
+    public function show_all()
     {
         $meetings = Meeting::all();
-        dd($meetings);
-//        $pins = [];
-//        echo json_encode($pins);
+
+        return response()->json($meetings);
     }
 
     /**
@@ -50,6 +49,7 @@ class MeetingController extends Controller
         $meeting->description = $request->input('description');
         $meeting->tag_id = $request->input('list1');
         $meeting->participants_need = $request->input('countPeople');
+        $meeting->participants_have = $request->input('have_count_people');
         $meeting->coordinates = $request->input('coord');
         $meeting->save();
     }

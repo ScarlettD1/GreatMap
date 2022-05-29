@@ -42,7 +42,11 @@
                             <input id="coord" name="coord" type="hidden">
                         </div>
                         <div class="mb-3 col-12 ">
-                            <label for="recipient-count" class="col-form-label">Количество человек:</label>
+                            <label for="recipient-count" class="col-form-label">Количество человек имеется:</label>
+                            <input type="number" name="have_count_people" class="form-control" id="recipient-count">
+                        </div>
+                        <div class="mb-3 col-12 ">
+                            <label for="recipient-count" class="col-form-label">Количество человек необходимо:</label>
                             <input type="number" name="countPeople" class="form-control" id="recipient-count">
                         </div>
                         <div class="mb-3 col-12 ">

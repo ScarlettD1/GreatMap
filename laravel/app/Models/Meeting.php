@@ -34,15 +34,6 @@ class Meeting extends Authenticatable
     protected $hidden = [
     ];
 
-    /**
-     * The attributes that should be cast.
-     *
-     * @var array<string, string>
-     */
-    protected $casts = [
-        'participants_have' => 0,
-    ];
-
     public function tags()
     {
         return $this->belongsToMany(Tags::class,
