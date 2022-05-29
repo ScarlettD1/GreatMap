@@ -1,6 +1,6 @@
 <?php
 
-use App\Http\Controllers\filmController;
+use App\Http\Controllers\meetingController;
 use App\Http\Controllers\ReviewController;
 use App\Http\Controllers\UserController;
 use Illuminate\Support\Facades\Route;
@@ -20,7 +20,7 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::resource('films', filmController::class);
+Route::resource('films', meetingController::class);
 
 Route::get('/films', 'App\Http\Controllers\filmController@index')->name('index');
 Route::get('/users/{user:name}/feed', [UserController::class, 'feed'])->name('users.feed');

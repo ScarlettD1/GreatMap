@@ -28,3 +28,6 @@ Route::get('/entrance/', function () {
 Route::get('/registration/', function () {
     return view('registration');
 });
+Route::get('/meetings_pins/', 'App\Http\Controllers\meetingController@show');
+
+

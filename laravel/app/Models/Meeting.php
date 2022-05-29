@@ -52,4 +52,8 @@ class Meeting extends Authenticatable
             'tag_id');
 
     }
+
+    public function get_meetings(){
+        $pins = $this->get();
+    }
 }
