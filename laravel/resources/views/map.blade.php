@@ -38,7 +38,7 @@
                         </div>
                         <div class="mb-3 col-12 ">
                             <label id="shirota" class="col-form-label">Местоположение:</label>
-                            <label id="shirotaStreet">dolgota</label>
+                            <label id="shirotaStreet"> </label>
                         </div>
                         <div class="mb-3 col-12 ">
                             <label for="recipient-count" class="col-form-label">Количество человек:</label>
