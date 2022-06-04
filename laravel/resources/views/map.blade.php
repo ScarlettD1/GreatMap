@@ -34,24 +34,24 @@
                             <!--<input type="text" name="cause" class="form-control" id="recipient-name">-->
                         </div>
                         <div class="mb-3 col-12 ">
-                            <button class="btn form-control" onclick="createPlace()">Указать место на карте</button>
+                            <button class="btn form-control" id="indicate-the-place" onclick="createPlace()">Указать место на карте</button>
                         </div>
                         <div class="mb-3 col-12 ">
                             <label id="shirota" class="col-form-label">Местоположение:</label>
-                            <label id="shirotaStreet">dolgota</label>
+                            <label id="shirotaStreet"> </label>
                             <input id="coord" name="coord" type="hidden">
                         </div>
                         <div class="mb-3 col-12 ">
                             <label for="recipient-count" class="col-form-label">Количество человек имеется:</label>
-                            <input type="number" name="have_count_people" class="form-control" id="recipient-count">
+                            <input type="number" name="have_count_people" class="form-control" id="recipient-count-have">
                         </div>
                         <div class="mb-3 col-12 ">
                             <label for="recipient-count" class="col-form-label">Количество человек необходимо:</label>
-                            <input type="number" name="countPeople" class="form-control" id="recipient-count">
+                            <input type="number" name="countPeople" class="form-control" id="recipient-count-need">
                         </div>
                         <div class="mb-3 col-12 ">
                             <label for="recipient-date" class="col-form-label">Время сбора:</label>
-                            <input type="date" name="meeting_time" class="form-control" id="recipient-date">
+                            <input type="datetime-local" name="meeting_time" class="form-control" id="recipient-date">
                         </div>
                         <div class="mb-3 col-12 ">
                             <label for="message-text" class="col-form-label">Описание:</label>
@@ -87,7 +87,6 @@
             </div>
         </div>
         <!--Click marker-->
-        !--Click marker-->
         <div id="selectedMarker" class="selectedMarker imshow">
             <div class="modal-content">
                 <div class="modal-header">
