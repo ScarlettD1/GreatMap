@@ -87,6 +87,7 @@
             </div>
         </div>
         <!--Click marker-->
+        !--Click marker-->
         <div id="selectedMarker" class="selectedMarker imshow">
             <div class="modal-content">
                 <div class="modal-header">
@@ -96,11 +97,11 @@
                 <div class="modal-body">
                     <div class="mb-3 col-12 selectedMarkerform">
                         <label id="categoryForTheLabel" class="categoryForTheLabel titltLabel">Категория:</label>
-                        <label id="categoryForTheSelectedLabel" class="categoryForTheSelectedLabel">Спорт</label>
+                        <label id="categoryForTheSelectedLabel" class="categoryForTheSelectedLabel"></label>
                     </div>
                     <div class="mb-3 col-12 selectedMarkerform">
                         <label id="countPeopleForTheLabel" class="countPeopleForTheLabel titltLabel">Количество человек:</label>
-                        <label id="countPeopleForTheSelectedLabel" class="countPeopleForTheSelectedLabel">5/10</label>
+                        <span class="nowPeople" id="nowPeopleID">5</span>/<span class="mustPeople" id="needPeopleID">30</span>
                     </div>
                     <div class="mb-3 col-12 selectedMarkerform">
                         <label id="timeForTheLabel" class="timeForTheLabel titltLabel">Время:</label>
@@ -115,7 +116,8 @@
                         <label id="descriptionForTheSelectedLabel" class="descriptionForTheSelectedLabel">Собираемся играть в футбол, все необходимое для игры есть. От вас форма и запас хорошего настроения.</label>
                     </div>
                     <div class="mb-3 modal-footer selectedMarkerformbtn">
-                        <button class="btn">Присоединиться</button>
+                        <button id="join" class="btn" onclick="participate()">Присоединиться</button>
+                        <button id="disconnect" class="btn imshow" onclick="cancelParticipation()">Отсоедениться</button>
                     </div>
                 </div>
             </div>

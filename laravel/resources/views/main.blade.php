@@ -9,30 +9,30 @@
 </head>
 <body>
 
+
 <!--Header-->
 <div class="header-color container-fluid">
-    <header
-        class="d-flex flex-wrap align-items-center justify-content-center justify-content-md-between py-3 border-bottom">
-        <a href="/map/" class="links-decoration">
-            <img src="../pictures/img/logo.png" width="40" height="40">
-            <span class="logo-text">Great Meet</span>
-        </a>
-        <ul class="nav col-12 col-md-auto mb-2 justify-content-center mb-md-0">
-            <li><a href="/map/" class="nav-link px-2 links-decoration">Встречи</a></li>
-            <li><a href="/support/" class="nav-link px-2 links-decoration">Поддержка</a></li>
-            <li>
-                <span class="nav-link px-2 links-decoration">
-                    <span id="time_date" class="hours">
-                    </span>
-                    <span id="time_hour" class="hours">
-                    </span>
-                    :
-                    <span id="time_minutes" class="minutes">
-                    </span>
-                </span>
-            </li>
-        </ul>
-        <div class="col-md-3 text-end">
+    <header class="row items-header">
+        <div class="col-3">
+            <a href="/map/" class="links-decoration">
+                <img src="../pictures/img/logo.png" width="40" height="40">
+                <span class="logo-text">Great Meet</span>
+            </a>
+        </div>
+        <div class="col-3">
+            <a href="/map/" class="px-2 links-decoration">Встречи</a>
+            <a href="/support/" class="px-2 links-decoration">Поддержка</a>
+        </div>
+        <div class="col-3 text-end">
+            <span id="time_date" class="hours">
+            </span>
+            <span id="time_hour" class="hours">
+            </span>
+            :
+            <span id="time_minutes" class="minutes">
+            </span>
+        </div>
+        <div class="col-3 text-end">
             <a href="/entrance/" class="tst">
                 <button class="btn">Войти</button>
             </a>
@@ -42,6 +42,41 @@
         </div>
     </header>
 </div>
+
+
+{{--<!--Header-->--}}
+{{--<div class="header-color container-fluid">--}}
+{{--    <header--}}
+{{--        class="d-flex flex-wrap align-items-center justify-content-center justify-content-md-between py-3 border-bottom">--}}
+{{--        <a href="/map/" class="links-decoration">--}}
+{{--            <img src="../pictures/img/logo.png" width="40" height="40">--}}
+{{--            <span class="logo-text">Great Meet</span>--}}
+{{--        </a>--}}
+{{--        <ul class="nav col-12 col-md-auto mb-2 justify-content-center mb-md-0">--}}
+{{--            <li><a href="/map/" class="nav-link px-2 links-decoration">Встречи</a></li>--}}
+{{--            <li><a href="/support/" class="nav-link px-2 links-decoration">Поддержка</a></li>--}}
+{{--            <li>--}}
+{{--                <span class="nav-link px-2 links-decoration">--}}
+{{--                    <span id="time_date" class="hours">--}}
+{{--                    </span>--}}
+{{--                    <span id="time_hour" class="hours">--}}
+{{--                    </span>--}}
+{{--                    :--}}
+{{--                    <span id="time_minutes" class="minutes">--}}
+{{--                    </span>--}}
+{{--                </span>--}}
+{{--            </li>--}}
+{{--        </ul>--}}
+{{--        <div class="col-md-3 text-end">--}}
+{{--            <a href="/entrance/" class="tst">--}}
+{{--                <button class="btn">Войти</button>--}}
+{{--            </a>--}}
+{{--            <a href="/registration/" class="tst">--}}
+{{--                <button class="btn">Зарегистрироваться</button>--}}
+{{--            </a>--}}
+{{--        </div>--}}
+{{--    </header>--}}
+{{--</div>--}}
 
 @yield('content')
 

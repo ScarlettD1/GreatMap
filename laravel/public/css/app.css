@@ -1,5 +1,4 @@
 
-
 /*
 HEADER
 */
@@ -19,6 +18,7 @@ HEADER
 }
 
 .header-color{
+    height: 60px;
     background-color: #809ae1;
 }
 
@@ -216,6 +216,11 @@ MAIN
     border-radius: 0!important;
 }
 
+.modal-content-enter{
+    height: 200px;
+    width: 300px;
+}
+
 .mb-3 {
     margin-bottom: 0.25rem!important;
     /*height: 3rem;*/
@@ -247,6 +252,9 @@ MAIN
     border-bottom-right-radius: calc(0.3rem - 1px);
     border-bottom-left-radius: calc(0.3rem - 1px);
 }
+
+
+
 
 /*!*Блокировка нижних элементов карты*!*/
 /*[class*="copyrights-pane"] {*/
@@ -585,8 +593,3 @@ textarea.form-control {
 .form-submit {
     text-align: center;
 }
-
-
-
-
-
