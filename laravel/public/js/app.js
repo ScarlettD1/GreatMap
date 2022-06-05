@@ -16,7 +16,21 @@ var countActive = 0;
 
 var flag = false;
 
-var cause = '';
+var titleForLabel = document.getElementById('selectedMarkerTitle');
+var categoryForTheLabel = document.getElementById('categoryForTheSelectedLabel');
+var nowPeopleID = document.getElementById('nowPeopleID');
+var needPeopleID = document.getElementById('needPeopleID');
+var timeForTheLabel = document.getElementById('timeForTheSelectedLabel');
+var shirotaForLabel = document.getElementById('shirotaForTheSelectedLabel');
+var descriptionForTheLabel = document.getElementById('descriptionForTheSelectedLabel');
+
+var disconnecting = document.getElementById('disconnect');
+var join = document.getElementById('join');
+var countPeople1 = document.getElementById("nowPeopleID");
+var countPeople2 = document.getElementById("needPeopleID");
+
+var coords;
+var tags;
 var description = '';
 
 function showFilter() {
@@ -30,8 +44,15 @@ function removeFilter() {
 // Отображение точек с таблицы meetings
 function showPlaces(places) {
     places.forEach(element => {
-        var placemark = new ymaps.Placemark(element.coordinates.split(','), {
-                hintContent: cause
+        var placemark = new ymaps.Placemark(element.coordinates.split(','),
+            {
+                titlePlacemark: element.name,
+                recipient_countPlacemark:element.participants_have,
+                man_neededPlacemark:element.participants_need,
+                recipient_datePlacemark:element.meeting_time,
+                placePlaxemark:element.coord,
+                descriptionPlacemark:element.description,
+                tagPlacemark:tags[element.tag_id - 1].name,
             }
             , {
                 iconLayout: 'default#image',
@@ -40,14 +61,38 @@ function showPlaces(places) {
                 iconImageOffset: [-20, -20]
             });
         map.geoObjects.add(placemark);
+
+        placemark.events
+            .add('click', function (e) {
+                // Получим ссылку на геообъект, по которому кликнул пользователь.
+                var targetCoords = e.get('target').geometry.getCoordinates();
+                getAddressLabel(targetCoords, e);
+                document.getElementById('coord').value = targetCoords;
+
+                activePlacemark = e.get('target');
+                if (flagOnActive) {
+                    activePlacemark.options.set('iconImageHref', '../pictures/markers/gold_icon24.png');
+
+                    flagOnActive = false;
+                    if (countActive !== 0)
+                        newPlacemark.options.set('iconImageHref', '../pictures/markers/blue-icon.png');
+                    newPlacemark = activePlacemark;
+                    countActive++;
+
+                } else {
+                    newPlacemark.options.set('iconImageHref', '../pictures/markers/blue-icon.png');
+                    activePlacemark.options.set('iconImageHref', '../pictures/markers/gold_icon24.png');
+                    newPlacemark = activePlacemark;
+                    flagOnActive = true;
+                }
+
+                selectedlabel.classList.remove('imshow');
+            });
     })
 }
 
-
 function getPlaces() {
     var form = document.forms.hint_form;
-    // var cause_form = form.elements.cause.value;
-    // var description_form = form.elements.description.value;
     token = form.elements._token.value;
     fetch('/meetings_pins', {
         method: 'GET',
@@ -60,11 +105,31 @@ function getPlaces() {
     });
 }
 
+function getTags() {
+    var form = document.forms.hint_form;
+    token = form.elements._token.value;
+    fetch('/tag_list', {
+        method: 'GET',
+        headers: {
+            'Content-Type': 'application/json',
+            'X-CSRF-TOKEN': token
+        },
+    }).then(r => {
+       r.json().then(putTags)
+    });
+}
+
+function putTags(loaded_tags){
+    console.log(loaded_tags);
+    tags = loaded_tags;
+}
+
 document.addEventListener("DOMContentLoaded", function() {
-    getPlaces()
+    getTags();
+    getPlaces();
 });
 
-function createPlace() {
+function choosePlace() {
     event.preventDefault();
     flag = true;
 
@@ -72,67 +137,89 @@ function createPlace() {
     map.events.add('click', function ggwp(e) {
         if (flag) {
             e.preventDefault();
-            var coords = e.get('coords');
+            coords = e.get('coords');
             document.getElementById('coord').value = coords;
             getAddress(coords);
 
             modal.classList.add('show');
-
-            const iPlacemarkId = placemarks.push(
-                {
-                    latitude: coords[0],
-                    longitude: coords[1],
-                    hintContent: cause
-                })
-
-            cause = '';
-            description = '';
-            var placemark = new ymaps.Placemark([coords[0], coords[1]], {
-                    hintContent: cause
-                }
-                , {
-                    iconLayout: 'default#image',
-                    iconImageHref: '../pictures/markers/blue-icon.png',
-                    iconImageSize: [30, 30],
-                    iconImageOffset: [-20, -20]
-                });
-            map.geoObjects.add(placemark);
-
-            // Подпишемся на событие клика по коллекции.
-            placemark.events
-                .add('click', function (e) {
-                    // Получим ссылку на геообъект, по которому кликнул пользователь.
-                    var targetCoords = e.get('target').geometry.getCoordinates();
-                    getAddressLabel(targetCoords);
-                    document.getElementById('coord').value = targetCoords;
-
-                    activePlacemark = e.get('target');
-                    if (flagOnActive) {
-                        activePlacemark.options.set('iconImageHref', '../pictures/markers/gold_icon24.png');
-
-                        flagOnActive = false;
-                        if (countActive !== 0)
-                            newPlacemark.options.set('iconImageHref', '../pictures/markers/blue-icon.png');
-                        newPlacemark = activePlacemark;
-                        countActive++;
-
-                    } else {
-                        newPlacemark.options.set('iconImageHref', '../pictures/markers/blue-icon.png');
-                        activePlacemark.options.set('iconImageHref', '../pictures/markers/gold_icon24.png');
-                        newPlacemark = activePlacemark;
-                        flagOnActive = true;
-                    }
-                    // activePlacemark = e.get('target');
-                    // activePlacemark.options.set('iconImageHref', 'pictures/markers/blue-icon.png');
-                    // e.get('target').options.change()
-
-                    selectedlabel.classList.remove('imshow');
-                });
         }
         flag = false;
     });
 
     return true;
+}
+
+function AddMark() {
+    var title = document.getElementById('title');
+    var recipient_count = document.getElementById('recipient-count-have');
+    var man_needed = document.getElementById('recipient-count-need');
+    var description = document.getElementById('message-text');
+    var recipient_date = document.getElementById('recipient-date');
+    var place = document.getElementById('shirotaStreet');
+    var tag = document.getElementById('recipient-name');
+
+    var placemark = new ymaps.Placemark([coords[0], coords[1]],
+        {
+            titlePlacemark: title.value,
+            recipient_countPlacemark:recipient_count.value,
+            man_neededPlacemark:man_needed.value,
+            recipient_datePlacemark:recipient_date.value,
+            placePlaxemark:place.value,
+            descriptionPlacemark:description.value,
+            tagPlacemark:tags[tag.value - 1].name,
+        }
+        , {
+            iconLayout: 'default#image',
+            iconImageHref: '../pictures/markers/blue-icon.png',
+            iconImageSize: [30, 30],
+            iconImageOffset: [-20, -20]
+        });
+
+    map.geoObjects.add(placemark);
+
+    // Подпишемся на событие клика по коллекции.
+    placemark.events
+        .add('click', function (e) {
+            // Получим ссылку на геообъект, по которому кликнул пользователь.
+            var targetCoords = e.get('target').geometry.getCoordinates();
+            getAddressLabel(targetCoords, e);
+            document.getElementById('coord').value = targetCoords;
+
+            activePlacemark = e.get('target');
+            if (flagOnActive) {
+                activePlacemark.options.set('iconImageHref', '../pictures/markers/gold_icon24.png');
+
+                flagOnActive = false;
+                if (countActive !== 0)
+                    newPlacemark.options.set('iconImageHref', '../pictures/markers/blue-icon.png');
+                newPlacemark = activePlacemark;
+                countActive++;
+
+            } else {
+                newPlacemark.options.set('iconImageHref', '../pictures/markers/blue-icon.png');
+                activePlacemark.options.set('iconImageHref', '../pictures/markers/gold_icon24.png');
+                newPlacemark = activePlacemark;
+                flagOnActive = true;
+            }
+
+            selectedlabel.classList.remove('imshow');
+        });
+
+    document.getElementById("hint_form").reset();
+    document.getElementById("shirotaStreet").innerHTML = "";
+    modal.classList.add('imshow');
+}
+
+function participate(){
+    countPeople1.innerHTML = Number(countPeople1.textContent) + 1;
+    join.classList.add('imshow');
+    disconnecting.classList.remove('imshow');
+}
+
+function cancelParticipation(){
+    countPeople1.innerHTML = Number(countPeople1.textContent) - 1;
+    join.classList.remove('imshow');
+    disconnecting.classList.add('imshow');
 }
 
 function getAddress(coords) {
@@ -149,20 +236,25 @@ function getAddress(coords) {
     });
 }
 
-function getAddressLabel(target) {
+function getAddressLabel(target, e) {
     ymaps.geocode(target).then(function (res) {
         var secondGeoObject = res.geoObjects.get(0);
         [
-            // Название населенного пункта или вышестоящее административно-территориальное образование.
+// Название населенного пункта или вышестоящее административно-территориальное образование.
             secondGeoObject.getLocalities().length ? secondGeoObject.getLocalities() : secondGeoObject.getAdministrativeAreas(),
-            // Получаем путь до топонима, если метод вернул null, запрашиваем наименование здания.
+// Получаем путь до топонима, если метод вернул null, запрашиваем наименование здания.
             secondGeoObject.getThoroughfare() || secondGeoObject.getPremise()
         ].filter(Boolean).join(', ')
         shirotaForLabel.innerText = secondGeoObject.getAddressLine();
-        // return firstGeoObject.getAddressLine();
+        var placemark = e.get('target');
+        titleForLabel.innerText = placemark.properties.get('titlePlacemark');
+        categoryForTheLabel.innerText = placemark.properties.get('tagPlacemark');
+        nowPeopleID.innerText = placemark.properties.get('recipient_countPlacemark');
+        needPeopleID.innerText = placemark.properties.get('man_neededPlacemark');
+        timeForTheLabel.innerText = placemark.properties.get('recipient_datePlacemark');
+        descriptionForTheLabel.innerText = placemark.properties.get('descriptionPlacemark');
     });
 }
-
 
 function checkHintForm() {
     event.preventDefault();
@@ -223,12 +315,12 @@ function init() {
     }, {
         searchControlProvider: 'yandex#search'
     });
-    var myPlacemark = new ymaps.Placemark([55.76, 37.64], {
-        // Хинт показывается при наведении мышкой на иконку метки.
-        hintContent: 'Содержимое всплывающей подсказки',
-        // Балун откроется при клике по метке.
-        balloonContent: 'Содержимое балуна'
-    });
+    // var myPlacemark = new ymaps.Placemark([55.76, 37.64], {
+    //     // Хинт показывается при наведении мышкой на иконку метки.
+    //     hintContent: 'Содержимое всплывающей подсказки',
+    //     // Балун откроется при клике по метке.
+    //     balloonContent: 'Содержимое балуна'
+    // });
     geolocation.get({
         provider: 'yandex',
         mapStateAutoApply: true

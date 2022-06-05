@@ -7,7 +7,7 @@ use Illuminate\Database\Eloquent\Model;
 use Illuminate\Notifications\Notifiable;
 use Laravel\Sanctum\HasApiTokens;
 
-class tags extends Model
+class Tags extends Model
 {
     use HasApiTokens, HasFactory, Notifiable;
 
@@ -17,7 +17,7 @@ class tags extends Model
      * @var array<int, string>
      */
     protected $fillable = [
-        'tag',
+        'name',
     ];
 
     /**
@@ -44,8 +44,5 @@ class tags extends Model
             'meet_id');
 
     }
-    //return $this->belongsToMany(RelatedModel,
-    // pivot_table_name,
-    // foreign_key_of_current_model_in_pivot_table,
-    // foreign_key_of_other_model_in_pivot_table);
+
 }

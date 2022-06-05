@@ -30,11 +30,9 @@
                                     @endforeach
                                 </select>
                             </p>
-
-                            <!--<input type="text" name="cause" class="form-control" id="recipient-name">-->
                         </div>
                         <div class="mb-3 col-12 ">
-                            <button class="btn form-control" id="indicate-the-place" onclick="createPlace()">Указать место на карте</button>
+                            <button class="btn form-control" onclick="choosePlace()">Указать место на карте</button>
                         </div>
                         <div class="mb-3 col-12 ">
                             <label id="shirota" class="col-form-label">Местоположение:</label>
@@ -58,7 +56,7 @@
                             <textarea class="form-control" name="description" id="message-text"></textarea>
                         </div>
                         <div class="mb-3 modal-footer">
-                            <button type="submit" class="btn">Добавить</button>
+                            <button type="submit" onclick="AddMark()" class="btn">Добавить</button>
                         </div>
                     </form>
                 </div>
@@ -116,7 +114,7 @@
                     </div>
                     <div class="mb-3 modal-footer selectedMarkerformbtn">
                         <button id="join" class="btn" onclick="participate()">Присоединиться</button>
-                        <button id="disconnect" class="btn imshow" onclick="cancelParticipation()">Отсоедениться</button>
+                        <button id="disconnect" class="btn imshow" onclick="cancelParticipation()">Отсоединиться</button>
                     </div>
                 </div>
             </div>

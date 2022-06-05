@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Film;
 use App\Models\Meeting;
+use App\Models\tags;
 use App\Models\User;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Http\Request;
@@ -34,6 +35,18 @@ class MeetingController extends Controller
         $meetings = Meeting::all();
 
         return response()->json($meetings);
+    }
+
+    /**
+     * Display a listing of the resource.
+     *
+     *
+     */
+    public function show_tags()
+    {
+        $tags = tags::all();
+
+        return response()->json($tags);
     }
 
     /**

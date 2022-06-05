@@ -20,7 +20,7 @@ class Meeting extends Authenticatable
         'name',
         'meeting_time',
         'description',
-        'tags',
+        'tag_id',
         'participants_need',
         'participants_have',
         'coordinates'

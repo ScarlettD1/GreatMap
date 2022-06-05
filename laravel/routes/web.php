@@ -33,6 +33,7 @@ Route::get('/registration/', function () {
     return view('registration');
 });
 Route::get('/meetings_pins', [MeetingController::class, 'show_all']);
+Route::get('/tag_list', [MeetingController::class, 'show_tags']);
 Route::post('/create', [MeetingController::class, 'create'])->name('create');
 
 
