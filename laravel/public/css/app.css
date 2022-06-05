@@ -29,6 +29,7 @@ body{
 .adress-input:focus {
     border: none;
 }
+
 .tst{
     text-decoration: none;
 }
@@ -36,6 +37,10 @@ body{
 .validation-text{
     font-size: 15px;
     color: darkred;
+}
+
+.ListOfTags {
+    height: 40px;
 }
 
 .header-color{

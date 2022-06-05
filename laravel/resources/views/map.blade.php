@@ -25,7 +25,7 @@
                         </div>
                         <div class="mb-3 col-12 ">
                             <label for="recipient-name" class="col-form-label">Категория встречи:</label>
-                            <p><select name="list1" id="recipient-name">
+                            <p><select name="list1" class="form-control" id="recipient-name">
                                     @foreach($tags as $tag)
                                     <option value={{ $tag->id }}>{{ $tag->name }}</option>
                                     @endforeach
@@ -67,21 +67,26 @@
         <!--Filter-->
         <div id="filter" class="filter container-fluid imshow">
             <div class="row items-header justify-content-around">
-                <form style="display: inline-flex">
+                <form style="display: inline-flex" id="filter_form">
+                    @csrf
                     <div class="col-1 pad-filter">
                         <button type="button" class="btn-close" data-bs-dismiss="modal" onclick="removeFilter()" aria-label="Close" style="width: 30px; height: 30px;"></button>
                     </div>
-                    <div class="col-3 pad-filter">
-                        <input type="text" class="form-control" placeholder="Категория">
+                    <div class="col-2 pad-filter">
+                        <select name="list1" class="form-control" id="tags_filter">
+                            @foreach($tags as $tag)
+                                <option value={{ $tag->id }}>{{ $tag->name }}</option>
+                            @endforeach
+                        </select>
                     </div>
-                    <div class="col-3 pad-filter">
-                        <input type="text" class="form-control" placeholder="Количество людей">
+                    <div class="col-5 pad-filter">
+                        <input type="text" class="form-control" id="people_count_filter" placeholder="Количество людей">
                     </div>
-                    <div class="col-3 pad-filter">
-                        <input type="text" class="form-control" placeholder="Время">
-                    </div>
+{{--                    <div class="col-3 pad-filter">--}}
+{{--                        <input type="text" class="form-control" placeholder="Время">--}}
+{{--                    </div>--}}
                     <div class="col-2 row-item-header-b1">
-                        <button type="submit" class="btn" onclick="removeFilter()">Применить</button>
+                        <button type="submit" class="btn">Применить</button>
                     </div>
                 </form>
             </div>
@@ -118,6 +123,7 @@
                         <button id="join" class="btn" onclick="participate()">Присоединиться</button>
                         <button id="disconnect" class="btn imshow" onclick="cancelParticipation()">Отсоединиться</button>
                     </div>
+                    <input type="hidden" id="user_id">
                 </div>
             </div>
         </div>

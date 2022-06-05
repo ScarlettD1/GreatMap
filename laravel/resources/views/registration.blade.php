@@ -5,36 +5,35 @@
 
 <!--Reg Form-->
 <div class="container reg_form">
-    <form class="row justify-content-md-center" method="post" action="#">
+    <form class="row justify-content-md-center" method="post" action="{{ route('register') }}">
+        @csrf
+
         <h2>Регистрация</h2>
         <div class="mb-3 col-12 col-md-4">
-            <label for="formGroupExampleInput" class="form-label">Логин</label>
-            <input type="text" class="form-control" id="formGroupExampleInput" placeholder="Придумайте логин">
+            <label for="name" class="form-label">Логин</label>
+            <input type="text" class="form-control" id="name" name="name" placeholder="Придумайте логин">
         </div>
         <div class="w-100"></div>
         <div class="mb-3 col-12 col-md-4">
-            <label for="exampleInputEmail1" class="form-label">Email</label>
-            <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+            <label for="email" class="form-label">Email</label>
+            <input type="email" class="form-control" name="email" id="email" aria-describedby="emailHelp">
             <div id="emailHelp" class="form-text">Ваш email адрес будет использован для уведомлений о встречах</div>
         </div>
         <div class="w-100"></div>
 
         <div class="mb-3 col-12 col-md-4">
-            <label for="exampleInputPassword1" class="form-label">Пароль</label>
-            <input type="password" class="form-control" id="exampleInputPassword1">
+            <label for="password" class="form-label">Пароль</label>
+            <input type="password" class="form-control" id="password">
         </div>
         <div class="w-100"></div>
 
         <div class="mb-3 col-12 col-md-4">
-            <label for="exampleInputPassword2" class="form-label">Повторите пароль</label>
-            <input type="password" class="form-control" id="exampleInputPassword2">
+            <label for="password_confirmation" class="form-label">Повторите пароль</label>
+            <input type="password" class="form-control" name="password_confirmation" id="password_confirmation">
         </div>
         <div class="w-100"></div>
-        <div class="mb-3 col-12 col-md-4">
-            <button type="submit" class="btn btn-primary">Зарегестрироваться</button>
-            <a href="#">
-                <button class="btn btn-primary">Войти</button>
-            </a>
+        <div class="mb-5 mt-5 col-12 col-md-4 align-content-center">
+            <button type="submit" class="btn btn-primary">Зарегистрироваться</button>
         </div>
 
     </form>

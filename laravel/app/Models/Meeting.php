@@ -2,7 +2,9 @@
 
 namespace App\Models;
 
+use App\Filters\MeetingFilter;
 use Illuminate\Contracts\Auth\MustVerifyEmail;
+use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
@@ -23,6 +25,7 @@ class Meeting extends Authenticatable
         'tag_id',
         'participants_need',
         'participants_have',
+        'diff',
         'coordinates'
     ];
 

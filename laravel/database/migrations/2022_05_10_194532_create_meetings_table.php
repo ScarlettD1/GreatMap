@@ -23,6 +23,7 @@ class CreateMeetingsTable extends Migration
 
             $table->smallinteger('participants_need');
             $table->smallinteger('participants_have')->nullable();
+            $table->smallinteger('diff')->nullable();
             $table->integer('tag_id');
             $table->foreign('tag_id')->references('id')->on('tags');
         });

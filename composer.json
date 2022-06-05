@@ -1,5 +1,8 @@
 {
     "require-dev": {
         "laravel/breeze": "^1.9"
+    },
+    "require": {
+        "tucker-eric/eloquentfilter": "^3.1"
     }
 }

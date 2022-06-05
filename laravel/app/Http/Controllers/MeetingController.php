@@ -2,13 +2,14 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Film;
+use App\ModelFilters\MeetingFilter;
 use App\Models\Meeting;
 use App\Models\tags;
 use App\Models\User;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Gate;
 
 
@@ -32,8 +33,27 @@ class MeetingController extends Controller
      */
     public function show_all()
     {
-        $meetings = Meeting::all();
+        $meetings = Meeting::query()->whereColumn('participants_have', '<', 'participants_need')->get();
 
+        return response()->json($meetings);
+    }
+    /**
+     * Display a listing of the resource.
+     *
+     *
+     */
+    public function filter_show(Request $request)
+    {
+
+        if ($request->has('tag_id'))
+        {
+            $meetings = Meeting::query()->where('tag_id', $request->input('tag_id'))->get();
+        }
+
+        if ($request->has('people_count'))
+        {
+            $meetings = Meeting::query()->where('diff', $request->input('people_count'))->get();
+        }
         return response()->json($meetings);
     }
 
@@ -64,6 +84,7 @@ class MeetingController extends Controller
         $meeting->participants_need = $request->input('countPeople');
         $meeting->participants_have = $request->input('have_count_people');
         $meeting->coordinates = $request->input('coord');
+        $meeting->diff = $request->input('countPeople')-$request->input('have_count_people');
         $meeting->save();
     }
 

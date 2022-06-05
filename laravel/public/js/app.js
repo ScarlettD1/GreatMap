@@ -8,6 +8,8 @@ var shirota = document.getElementById('shirotaStreet');
 var dolgota = document.getElementById('dolgota');
 var map;
 
+var filterForm = document.getElementById('filter_form');
+
 var flagOnActive = true;
 var activePlacemark;
 var newPlacemark;
@@ -25,7 +27,7 @@ var descriptionForTheLabel = document.getElementById('descriptionForTheSelectedL
 
 var form = document.getElementById('hint_form');
 var button_for_place = document.getElementById('addmark');
-// button_for_place.disabled = true;
+button_for_place.disabled = true;
 
 
 var disconnecting = document.getElementById('disconnect');
@@ -119,7 +121,7 @@ function showPlaces(places) {
 function getPlaces() {
     var form = document.forms.hint_form;
     token = form.elements._token.value;
-    fetch('/meetings_pins', {
+    fetch(`/meetings_pins`, {
         method: 'GET',
         headers: {
             'Content-Type': 'application/json',
@@ -127,6 +129,26 @@ function getPlaces() {
         },
     }).then(r => {
        r.json().then(showPlaces)
+    });
+}
+
+function getPlacesFilter(tags, people) {
+    var form = document.forms.filter_form;
+    token = form.elements._token.value;
+    let url = new URL('http://127.0.0.1:8000/meetings_pinsFilter/');
+    url.searchParams.set('tag_id', tags);
+    if (people){
+        url.searchParams.set('people_count', people);
+    }
+
+    fetch(url, {
+        method: 'GET',
+        headers: {
+            'Content-Type': 'application/json',
+            'X-CSRF-TOKEN': token
+        },
+    }).then(r => {
+        r.json().then(showPlaces)
     });
 }
 
@@ -145,7 +167,6 @@ function getTags() {
 }
 
 function putTags(loaded_tags){
-    console.log(loaded_tags);
     tags = loaded_tags;
 }
 
@@ -162,7 +183,18 @@ document.addEventListener("DOMContentLoaded", function() {
             AddMark();
         }
     });
+    filterForm.addEventListener('submit', function (e){
+        e.preventDefault();
+        useFilter();
+    })
 });
+
+function useFilter(){
+    map.geoObjects.removeAll();
+    tag = document.getElementById('tags_filter').value;
+    people_count = document.getElementById('people_count_filter').value;
+    getPlacesFilter(tag, people_count);
+}
 
 function choosePlace() {
     event.preventDefault();
@@ -194,7 +226,6 @@ function AddMark() {
     var place = document.getElementById('shirotaStreet');
     var tag = document.getElementById('recipient-name');
 
-    console.log(place.value);
     var placemark = new ymaps.Placemark([coords[0], coords[1]],
         {
             titlePlacemark: title.value,
@@ -318,7 +349,7 @@ function checkHintForm() {
         "coord": coord,
         "have_count_people": haveCount
     };
-    console.log(JSON.stringify(data));
+    // console.log(JSON.stringify(data));
     fetch('/create', {
         method: 'POST',
         headers: {

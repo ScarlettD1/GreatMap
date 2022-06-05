@@ -33,12 +33,18 @@
             </span>
         </div>
         <div class="col-3 text-end">
+            @if (Auth::check())
+            <a href="/entrance/" class="tst">
+                <button class="btn">{{Auth::user()}}</button>
+            </a>
+             @else
             <a href="/entrance/" class="tst">
                 <button class="btn">Войти</button>
             </a>
             <a href="/registration/" class="tst">
                 <button class="btn">Зарегистрироваться</button>
             </a>
+            @endif
         </div>
     </header>
 </div>
