@@ -19,8 +19,23 @@ body{
     overflow: hidden;
 }
 
+.adress-input {
+    border: none;
+    outline: none;
+    cursor: default;
+    width: 100%;
+}
+
+.adress-input:focus {
+    border: none;
+}
 .tst{
     text-decoration: none;
+}
+
+.validation-text{
+    font-size: 15px;
+    color: darkred;
 }
 
 .header-color{
@@ -185,7 +200,6 @@ MAIN
 }
 
 
-
 .background-map{
     background-color: #809ae1;
     height: 70%;
@@ -195,6 +209,10 @@ MAIN
     height: 48em;
     /*Delete*/
     position: relative;
+}
+
+.multy-line{
+    word-break: break-word;
 }
 
 .add-meet{

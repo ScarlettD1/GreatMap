@@ -5,7 +5,6 @@ var placemarks = [];
 var modal = document.getElementById('exampleModal');
 var selectedlabel = document.getElementById('selectedMarker')
 var shirota = document.getElementById('shirotaStreet');
-var shirotaForLabel = document.getElementById('shirotaForTheSelectedLabel');
 var dolgota = document.getElementById('dolgota');
 var map;
 
@@ -24,6 +23,11 @@ var timeForTheLabel = document.getElementById('timeForTheSelectedLabel');
 var shirotaForLabel = document.getElementById('shirotaForTheSelectedLabel');
 var descriptionForTheLabel = document.getElementById('descriptionForTheSelectedLabel');
 
+var form = document.getElementById('hint_form');
+var button_for_place = document.getElementById('addmark');
+// button_for_place.disabled = true;
+
+
 var disconnecting = document.getElementById('disconnect');
 var join = document.getElementById('join');
 var countPeople1 = document.getElementById("nowPeopleID");
@@ -32,6 +36,27 @@ var countPeople2 = document.getElementById("needPeopleID");
 var coords;
 var tags;
 var description = '';
+
+
+
+function checkParams() {
+    var titleCheck = document.getElementById("title").value;
+    var recipient_countCheck = document.getElementById("recipient-count-have").value;
+    var man_neededCheck = document.getElementById("recipient-count-need").value;
+    var recipient_dateCheck = document.getElementById("recipient-date").value;
+    var message_textCheck = document.getElementById("message-text").value;
+    var streetCheck = document.getElementById('coord').value;
+
+    if (titleCheck.length !== 0 &&
+        recipient_countCheck !== 0 &&
+        man_neededCheck !== 0 &&
+        recipient_dateCheck.length !== 0 &&
+        message_textCheck.length !== 0 &&
+        streetCheck.length !== 0
+    ) {
+        button_for_place.disabled = false;
+    }
+}
 
 function showFilter() {
     filter.classList.remove('imshow')
@@ -127,6 +152,16 @@ function putTags(loaded_tags){
 document.addEventListener("DOMContentLoaded", function() {
     getTags();
     getPlaces();
+    form.addEventListener('submit', function (event){
+
+        if (!form.checkValidity()) {
+            event.preventDefault()
+            event.stopPropagation()
+        } else {
+            form.classList.add('was-validated')
+            AddMark();
+        }
+    });
 });
 
 function choosePlace() {
@@ -142,6 +177,7 @@ function choosePlace() {
             getAddress(coords);
 
             modal.classList.add('show');
+            checkParams();
         }
         flag = false;
     });
@@ -158,6 +194,7 @@ function AddMark() {
     var place = document.getElementById('shirotaStreet');
     var tag = document.getElementById('recipient-name');
 
+    console.log(place.value);
     var placemark = new ymaps.Placemark([coords[0], coords[1]],
         {
             titlePlacemark: title.value,
@@ -205,9 +242,12 @@ function AddMark() {
             selectedlabel.classList.remove('imshow');
         });
 
-    document.getElementById("hint_form").reset();
-    document.getElementById("shirotaStreet").innerHTML = "";
+    form.reset();
+    document.getElementById("shirotaStreet").value = "";
+    document.getElementById("coord").value = "";
     modal.classList.add('imshow');
+
+    button_for_place.disabled = true;
 }
 
 function participate(){
@@ -231,7 +271,7 @@ function getAddress(coords) {
             // Получаем путь до топонима, если метод вернул null, запрашиваем наименование здания.
             firstGeoObject.getThoroughfare() || firstGeoObject.getPremise()
         ].filter(Boolean).join(', ')
-        shirota.innerText = firstGeoObject.getAddressLine();
+        shirota.value = firstGeoObject.getAddressLine();
         // return firstGeoObject.getAddressLine();
     });
 }

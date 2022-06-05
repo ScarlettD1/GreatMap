@@ -16,11 +16,12 @@
                     <button type="button" class="btn-close" data-bs-dismiss="modal" onclick="closeModalHintAlways()" aria-label="Close"></button>
                 </div>
                 <div class="modal-body">
-                    <form id="hint_form" action="{{ route('create') }}" onsubmit="return checkHintForm(this)" method="post">
+                    <form id="hint_form" class="needs-validation was-validated " novalidate action="{{ route('create') }}" onsubmit="return checkHintForm(this)" method="post">
                         @csrf
+{{--                        <span class="validation-text">Для добавления метки необходимо заполнить все поля!</span>--}}
                         <div class="mb-3 col-12 ">
                             <label for="title" class="col-form-label">Название:</label>
-                            <input type="text" class="form-control" name="title_event" id="title">
+                            <input type="text" class="form-control" minlength="4" maxlength="25" onchange="checkParams()" placeholder="от 4 до 25 символов" name="title_event" id="title" required>
                         </div>
                         <div class="mb-3 col-12 ">
                             <label for="recipient-name" class="col-form-label">Категория встречи:</label>
@@ -36,27 +37,28 @@
                         </div>
                         <div class="mb-3 col-12 ">
                             <label id="shirota" class="col-form-label">Местоположение:</label>
-                            <label id="shirotaStreet"> </label>
+                            <input class="adress-input" id="shirotaStreet" type="text" readonly required>
                             <input id="coord" name="coord" type="hidden">
                         </div>
                         <div class="mb-3 col-12 ">
                             <label for="recipient-count" class="col-form-label">Количество человек имеется:</label>
-                            <input type="number" name="have_count_people" class="form-control" id="recipient-count-have">
+                            <input type="number" min="1" max="10" onchange="checkParams()" placeholder="от 1 до 10 человек" name="have_count_people" class="form-control" id="recipient-count-have" required>
                         </div>
+
                         <div class="mb-3 col-12 ">
                             <label for="recipient-count" class="col-form-label">Количество человек необходимо:</label>
-                            <input type="number" name="countPeople" class="form-control" id="recipient-count-need">
+                            <input type="number" min="2" max="30" onchange="checkParams()" placeholder="от 2 до 30 человек" name="countPeople" class="form-control" id="recipient-count-need" required>
                         </div>
                         <div class="mb-3 col-12 ">
                             <label for="recipient-date" class="col-form-label">Время сбора:</label>
-                            <input type="datetime-local" name="meeting_time" class="form-control" id="recipient-date">
+                            <input type="datetime-local" onchange="checkParams()" name="meeting_time" class="form-control" id="recipient-date" required>
                         </div>
                         <div class="mb-3 col-12 ">
                             <label for="message-text" class="col-form-label">Описание:</label>
-                            <textarea class="form-control" name="description" id="message-text"></textarea>
+                            <textarea class="form-control" onchange="checkParams()" name="description" id="message-text" required></textarea>
                         </div>
                         <div class="mb-3 modal-footer">
-                            <button type="submit" onclick="AddMark()" class="btn">Добавить</button>
+                            <button type="submit" id="addmark" class="btn">Добавить</button>
                         </div>
                     </form>
                 </div>
@@ -110,7 +112,7 @@
                     </div>
                     <div class="mb-3 col-12 selectedMarkerform">
                         <label id="descriptionForTheLabel" class="descriptionForTheLabel titltLabel">Описание:</label>
-                        <label id="descriptionForTheSelectedLabel" class="descriptionForTheSelectedLabel">Собираемся играть в футбол, все необходимое для игры есть. От вас форма и запас хорошего настроения.</label>
+                        <label id="descriptionForTheSelectedLabel" class="descriptionForTheSelectedLabel multy-line">Собираемся играть в футбол, все необходимое для игры есть. От вас форма и запас хорошего настроения.</label>
                     </div>
                     <div class="mb-3 modal-footer selectedMarkerformbtn">
                         <button id="join" class="btn" onclick="participate()">Присоединиться</button>
