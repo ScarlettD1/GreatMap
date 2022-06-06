@@ -89,7 +89,7 @@ class MeetingController extends Controller
         $meeting->participants_have = $request->input('have_count_people');
         $meeting->coordinates = $request->input('coord');
         $meeting->diff = $request->input('countPeople')-$request->input('have_count_people');
-        $meeting->owner_id = $request->input('user');
+        $meeting->owner_id = $request->input('userId');
         $meeting->save();
     }
 

@@ -26,7 +26,8 @@ class Meeting extends Authenticatable
         'participants_need',
         'participants_have',
         'diff',
-        'coordinates'
+        'coordinates',
+        'owner_id'
     ];
 
     /**

@@ -26,7 +26,7 @@
 {{--                        <span class="validation-text">Для добавления метки необходимо заполнить все поля!</span>--}}
                         @auth
                         <input type="hidden"
-                               name="user"
+                               name="userId"
                                class="form-control"
                                value="{{ auth()->user()->id }}"
                                id="user">

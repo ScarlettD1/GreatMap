@@ -28,7 +28,7 @@
         <div class="col-4 text-center">
             <a href="/" class="px-2 links-decoration">Встречи</a>
             <a href="/support/" class="px-4  links-decoration">Поддержка</a>
-            <a href="/help/" class="px-4  links-decoration">Помощь</a>
+            <a href="/help/" class="px-4  links-decoration">О нас</a>
         </div>
 
         <div class="col-2 text-end">
@@ -114,8 +114,8 @@
 <!--yandexMap-->
 <script src="https://api-maps.yandex.ru/2.1/?lang=ru_RU&amp;apikey=5127ede8-ca9d-4c4b-8d84-92ad690c4b07"></script>
 <script src="../js/app.js"></script>
-<script class="u-script" type="text/javascript" src="../js/jquery.js" defer=""></script>
-<script class="u-script" type="text/javascript" src="../js/nicepage.js" defer=""></script>
+<script src="../js/jquery.js"></script>
+<script src="../js/nicepage.js"></script>
 <!--boot5-->
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
