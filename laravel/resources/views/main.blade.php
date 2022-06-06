@@ -6,6 +6,12 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
           integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
     <link href="../css/app.css" rel="stylesheet">
+    <link rel="stylesheet" href="../css/nicePage.css" media="screen">
+    <link rel="stylesheet" href="../css/aboutProjct.css" media="screen">
+    <link id="u-theme-google-font" rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:100,100i,300,300i,400,400i,500,500i,700,700i,900,900i|Open+Sans:300,300i,400,400i,500,500i,600,600i,700,700i,800,800i">
+    <link id="u-page-google-font" rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat:100,100i,200,200i,300,300i,400,400i,500,500i,600,600i,700,700i,800,800i,900,900i">
+
+
 </head>
 <body>
 
@@ -108,6 +114,8 @@
 <!--yandexMap-->
 <script src="https://api-maps.yandex.ru/2.1/?lang=ru_RU&amp;apikey=5127ede8-ca9d-4c4b-8d84-92ad690c4b07"></script>
 <script src="../js/app.js"></script>
+<script class="u-script" type="text/javascript" src="../js/jquery.js" defer=""></script>
+<script class="u-script" type="text/javascript" src="../js/nicepage.js" defer=""></script>
 <!--boot5-->
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
