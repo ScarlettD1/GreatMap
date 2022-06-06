@@ -19,7 +19,7 @@ class Meeting extends Authenticatable
      * @var array<int, string>
      */
     protected $fillable = [
-        'name',
+        'title',
         'meeting_time',
         'description',
         'tag_id',

@@ -21,7 +21,8 @@ class CreateUsersTable extends Migration
             $table->string('password');
             $table->rememberToken();
             $table->timestamps();
-            $table->foreign('meetings_id')->references('id')->on('meetings');        });
+            $table->integer('meetings_id')->nullable();
+            $table->foreign('meetings_id')->references('id')->on('meetings');});
     }
 
     /**

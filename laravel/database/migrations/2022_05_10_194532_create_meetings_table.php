@@ -17,15 +17,17 @@ class CreateMeetingsTable extends Migration
             $table->id();
             $table->timestamps();
             $table->dateTime('meeting_time');
-            $table->string('name');
+            $table->string('title');
             $table->string('description')->nullable();
             $table->string('coordinates')->nullable();
 
             $table->smallinteger('participants_need');
             $table->smallinteger('participants_have')->nullable();
             $table->smallinteger('diff')->nullable();
+            $table->integer('owner_id')->nullable();
             $table->integer('tag_id');
             $table->foreign('tag_id')->references('id')->on('tags');
+            $table->foreign('owner_id')->references('id')->on('users');
         });
     }
 

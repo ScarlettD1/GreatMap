@@ -15,18 +15,16 @@ use Illuminate\Support\Facades\Route;
 | contains the "web" middleware group. Now create something great!
 |
 */
-
 Route::get('/', function () {
-    return view('welcome');
-});
-
-Route::get('/map/', function () {
     return view('map');
 });
-Route::get('/map/', [MapController::class, 'index']);
+Route::get('/', [MapController::class, 'index']);
 
 Route::get('/support/', function () {
     return view('support');
+});
+Route::get('/help/', function () {
+    return view('help');
 });
 Route::get('/entrance/', function () {
     return view('entrance');
@@ -38,6 +36,8 @@ Route::get('/meetings_pins', [MeetingController::class, 'show_all']);
 Route::get('/meetings_pinsFilter', [MeetingController::class, 'filter_show']);
 Route::get('/tag_list', [MeetingController::class, 'show_tags']);
 Route::post('/create', [MeetingController::class, 'create'])->name('create');
+
+Route::get('/meeting/destroy/{id}', [MeetingController::class, 'destroy'])->name('destroy');
 
 Auth::routes();
 

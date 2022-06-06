@@ -6,8 +6,13 @@
 <!--Map-->
 <div class="main background-map container-fluid">
     <div id="map" class="main-map ">
+        @auth
         <button class="btn btn-add" onclick="showModalHint()">Добавить</button>
-        <button class="btn filter-add" onclick="showFilter()">Фильтр</button>
+        @endauth
+        @guest
+        <button class="btn btn-add disabled">Добавить</button>
+        @endguest
+                <button class="btn filter-add" onclick="showFilter()">Фильтр</button>
         <!--Input event form-->
         <div id="exampleModal" class="add-meet imshow" >
             <div class="modal-content">
@@ -19,6 +24,13 @@
                     <form id="hint_form" class="needs-validation was-validated " novalidate action="{{ route('create') }}" onsubmit="return checkHintForm(this)" method="post">
                         @csrf
 {{--                        <span class="validation-text">Для добавления метки необходимо заполнить все поля!</span>--}}
+                        @auth
+                        <input type="hidden"
+                               name="user"
+                               class="form-control"
+                               value="{{ auth()->user()->id }}"
+                               id="user">
+                        @endauth
                         <div class="mb-3 col-12 ">
                             <label for="title" class="col-form-label">Название:</label>
                             <input type="text" class="form-control" minlength="4" maxlength="25" onchange="checkParams()" placeholder="от 4 до 25 символов" name="title_event" id="title" required>
@@ -32,6 +44,7 @@
                                 </select>
                             </p>
                         </div>
+
                         <div class="mb-3 col-12 ">
                             <button class="btn form-control" onclick="choosePlace()">Указать место на карте</button>
                         </div>
@@ -44,7 +57,6 @@
                             <label for="recipient-count" class="col-form-label">Количество человек имеется:</label>
                             <input type="number" min="1" max="10" onchange="checkParams()" placeholder="от 1 до 10 человек" name="have_count_people" class="form-control" id="recipient-count-have" required>
                         </div>
-
                         <div class="mb-3 col-12 ">
                             <label for="recipient-count" class="col-form-label">Количество человек необходимо:</label>
                             <input type="number" min="2" max="30" onchange="checkParams()" placeholder="от 2 до 30 человек" name="countPeople" class="form-control" id="recipient-count-need" required>
@@ -98,6 +110,7 @@
                     <h5 class="selectedMarker-title" id="selectedMarkerTitle">Футбол</h5>
                     <button type="button" class="btn-close" data-bs-dismiss="modal" onclick="closeSelectedLabelAlways()" aria-label="Close"></button>
                 </div>
+
                 <div class="modal-body">
                     <div class="mb-3 col-12 selectedMarkerform">
                         <label id="categoryForTheLabel" class="categoryForTheLabel titltLabel">Категория:</label>
@@ -119,8 +132,19 @@
                         <label id="descriptionForTheLabel" class="descriptionForTheLabel titltLabel">Описание:</label>
                         <label id="descriptionForTheSelectedLabel" class="descriptionForTheSelectedLabel multy-line">Собираемся играть в футбол, все необходимое для игры есть. От вас форма и запас хорошего настроения.</label>
                     </div>
+                    <div class="mb-3 col-12 selectedMarkerform">
+                        <label id="creator" class="descriptionForTheLabel titltLabel">Создал:</label>
+                        <label id="creatorLabel" class="descriptionForTheSelectedLabel multy-line">
+
+                        </label>
+                    </div>
                     <div class="mb-3 modal-footer selectedMarkerformbtn">
-                        <button id="join" class="btn" onclick="participate()">Присоединиться</button>
+                        @auth
+                            <button id="join" class="btn" onclick="participate()">Присоединиться</button>
+                        @endauth
+                        @guest
+                                <button id="join" class="btn" disabled>Присоединиться</button>
+                        @endguest
                         <button id="disconnect" class="btn imshow" onclick="cancelParticipation()">Отсоединиться</button>
                     </div>
                     <input type="hidden" id="user_id">

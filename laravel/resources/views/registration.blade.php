@@ -23,7 +23,7 @@
 
         <div class="mb-3 col-12 col-md-4">
             <label for="password" class="form-label">Пароль</label>
-            <input type="password" class="form-control" id="password">
+            <input type="password" name="password" class="form-control" id="password">
         </div>
         <div class="w-100"></div>
 
@@ -37,6 +37,15 @@
         </div>
 
     </form>
+    @if ($errors->any())
+        <div class="alert alert-danger">
+            <ul>
+                @foreach ($errors->all() as $error)
+                    <li>{{ $error }}</li>
+                @endforeach
+            </ul>
+        </div>
+    @endif
 </div>
 
 @endsection

@@ -14,15 +14,17 @@
 <div class="header-color container-fluid header-for-css">
     <header class="row items-header">
         <div class="col-3">
-            <a href="/map/" class="links-decoration">
+            <a href="/" class="links-decoration">
                 <img src="../pictures/img/logo.png" width="40" height="40">
                 <span class="logo-text">Great Meet</span>
             </a>
         </div>
         <div class="col-4 text-center">
-            <a href="/map/" class="px-2 links-decoration">Встречи</a>
+            <a href="/" class="px-2 links-decoration">Встречи</a>
             <a href="/support/" class="px-4  links-decoration">Поддержка</a>
+            <a href="/help/" class="px-4  links-decoration">Помощь</a>
         </div>
+
         <div class="col-2 text-end">
             <span id="time_date" class="hours">
             </span>
@@ -33,18 +35,22 @@
             </span>
         </div>
         <div class="col-3 text-end">
-            @if (Auth::check())
-            <a href="/entrance/" class="tst">
-                <button class="btn">{{Auth::user()}}</button>
-            </a>
-             @else
-            <a href="/entrance/" class="tst">
-                <button class="btn">Войти</button>
-            </a>
-            <a href="/registration/" class="tst">
-                <button class="btn">Зарегистрироваться</button>
-            </a>
-            @endif
+            @auth
+                <a href="/profile/" class="tst">
+                    <button class="btn">{{ auth()->user()->name }}</button>
+                </a>
+                <a href="/logout/" class="tst">
+                    <button class="btn">Выйти</button>
+                </a>
+            @endauth
+            @guest
+                <a href="/entrance/" class="tst">
+                    <button class="btn">Войти</button>
+                </a>
+                <a href="/registration/" class="tst">
+                    <button class="btn">Зарегистрироваться</button>
+                </a>
+            @endguest
         </div>
     </header>
 </div>
@@ -57,7 +63,7 @@
         <div class="col-4 row-item-footer-right">
         </div>
         <div class="col-4 row-item-header">
-            <a href="/map/" class="links-decoration">
+            <a href="/" class="links-decoration">
                 <img src="../pictures/img/logo.png" width="40" height="40">
                 <span class="logo-text">great meet</span>
             </a>

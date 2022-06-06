@@ -33,7 +33,11 @@ class MeetingController extends Controller
      */
     public function show_all()
     {
-        $meetings = Meeting::query()->whereColumn('participants_have', '<', 'participants_need')->get();
+        $meetings =
+            Meeting::query()
+                ->join('users','owner_id', '=', 'users.id')
+                ->whereColumn('participants_have', '<', 'participants_need')
+                ->get();
 
         return response()->json($meetings);
     }
@@ -77,7 +81,7 @@ class MeetingController extends Controller
     public function create(Request $request)
     {
         $meeting = new Meeting();
-        $meeting->name = $request->input('title_event');
+        $meeting->title = $request->input('title_event');
         $meeting->meeting_time = $request->input('meeting_time');
         $meeting->description = $request->input('description');
         $meeting->tag_id = $request->input('list1');
@@ -85,6 +89,7 @@ class MeetingController extends Controller
         $meeting->participants_have = $request->input('have_count_people');
         $meeting->coordinates = $request->input('coord');
         $meeting->diff = $request->input('countPeople')-$request->input('have_count_people');
+        $meeting->owner_id = $request->input('user');
         $meeting->save();
     }
 
@@ -174,22 +179,22 @@ class MeetingController extends Controller
 //
 //    }
 
-//    /**
-//     * Remove the specified resource from storage.
-//     *
-//     * @param  int $id
-//     * @return \Illuminate\Http\RedirectResponse|\Illuminate\Http\Response
-//     */
-//    public function destroy($id)
-//    {
-//        $film = Film::query()->findOrFail($id);
-//
-//        if($film!=null){
-//            $film->delete();
-//            return redirect()->route('index')->with('success', 'Удалено!');
-//        }
-//        return redirect()->back();
-//    }
+    /**
+     * Remove the specified resource from storage.
+     *
+     * @param  int $id
+     * @return \Illuminate\Http\RedirectResponse|\Illuminate\Http\Response
+     */
+    public function destroy($id)
+    {
+        $film = Meeting::query()->findOrFail($id);
+
+        if($film!=null){
+            $film->delete();
+            return redirect()->route('index')->with('success', 'Удалено!');
+        }
+        return redirect()->back();
+    }
 //
 //
 //    /**

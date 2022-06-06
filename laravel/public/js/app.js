@@ -22,6 +22,8 @@ var categoryForTheLabel = document.getElementById('categoryForTheSelectedLabel')
 var nowPeopleID = document.getElementById('nowPeopleID');
 var needPeopleID = document.getElementById('needPeopleID');
 var timeForTheLabel = document.getElementById('timeForTheSelectedLabel');
+var creatorLabel = document.getElementById('creatorLabel');
+var creatorId = document.getElementById('creatorId');
 var shirotaForLabel = document.getElementById('shirotaForTheSelectedLabel');
 var descriptionForTheLabel = document.getElementById('descriptionForTheSelectedLabel');
 
@@ -72,12 +74,15 @@ function showPlaces(places) {
     places.forEach(element => {
         var placemark = new ymaps.Placemark(element.coordinates.split(','),
             {
-                titlePlacemark: element.name,
+                id: element.id,
+                titlePlacemark: element.title,
+                creatorId: element.owner_id,
                 recipient_countPlacemark:element.participants_have,
                 man_neededPlacemark:element.participants_need,
                 recipient_datePlacemark:element.meeting_time,
                 placePlaxemark:element.coord,
                 descriptionPlacemark:element.description,
+                creatorLabelPlacemark:element.name,
                 tagPlacemark:tags[element.tag_id - 1].name,
             }
             , {
@@ -323,6 +328,7 @@ function getAddressLabel(target, e) {
         needPeopleID.innerText = placemark.properties.get('man_neededPlacemark');
         timeForTheLabel.innerText = placemark.properties.get('recipient_datePlacemark');
         descriptionForTheLabel.innerText = placemark.properties.get('descriptionPlacemark');
+        creatorLabel.innerText = placemark.properties.get('creatorLabelPlacemark');
     });
 }
 
