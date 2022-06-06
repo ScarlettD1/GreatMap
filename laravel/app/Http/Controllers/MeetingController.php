@@ -73,6 +73,7 @@ class MeetingController extends Controller
         return response()->json($tags);
     }
 
+
     /**
      * Show the form for creating a new resource.
      *
