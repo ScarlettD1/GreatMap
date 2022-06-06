@@ -27,7 +27,6 @@ var descriptionForTheLabel = document.getElementById('descriptionForTheSelectedL
 
 var form = document.getElementById('hint_form');
 var button_for_place = document.getElementById('addmark');
-button_for_place.disabled = true;
 
 
 var disconnecting = document.getElementById('disconnect');
@@ -450,4 +449,7 @@ document.getElementById('time_hour').innerHTML = thisHour;
 document.getElementById('time_minutes').innerHTML = thisMinutes;
 document.getElementById('time_date').innerHTML
     = thisDate + "." + thisMonth + "." + date.getFullYear() + " ";
+
+button_for_place.disabled = true;
+
 
